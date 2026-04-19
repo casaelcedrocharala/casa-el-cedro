@@ -1,0 +1,1191 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Montserrat&family=Plus+Jakarta+Sans');
+
+:root {
+    --fuente-titulos: 'Cormorant Garamond', serif;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+    --fuente-moderna: 'Plus Jakarta Sans', sans-serif;
+    --color-principal: #1a1a1a;
+    --color-acento: #a67c52;    
+    --color-fondo: #ffffff;     
+    --color-texto: #333333;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--fuente-moderna);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* --- SECCIONES Y TÍTULOS --- */
+section {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-family: var(--fuente-titulos);
+    color: var(--color-principal);
+    margin-bottom: 40px;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    background-color: white;
+    /* 1. Aumentamos el padding arriba y abajo (de 1rem a 1.5rem o más) */
+    padding: 1.5rem 2rem; 
+    border-bottom: 1px solid #f2f2f2;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    
+    /* 2. Añadimos un margen inferior para que respire antes del banner */
+    margin-bottom: 10px; 
+    
+    /* 3. Aseguramos una altura mínima controlada si usas variables */
+    min-height: 90px; 
+    display: flex;
+    align-items: center;
+}
+
+/* También ajustamos el contenedor interno para que el logo y menú no se peguen a los bordes */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1250px; /* Un poco más ancho para elegancia */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2001;
+}
+
+.nav-logo { width: 40px; height: auto; }
+
+#title, 
+.footer-logo {
+    font-family: var(--fuente-titulos) !important; /* Forza el uso de Cormorant Garamond */
+    text-transform: uppercase;         /* Mayúsculas elegantes */
+    letter-spacing: 1px;               /* Espaciado de lujo */
+    font-weight: 700;                  /* Grosor de marca */
+    color: var(--color-principal);     /* Color oscuro #1a1a1a */
+    margin: 0;
+    line-height: 1;
+}
+
+/* Ajuste específico para el tamaño en el Header */
+#title {
+    font-size: 1.4rem; /* Un poco más pequeño que el footer para que quepa en el menú */
+}
+
+/* Ajuste específico para el tamaño en el Footer */
+.footer-logo {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-principal);
+    transition: 0.3s;
+}
+
+/* Menú modo escritorio */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Efecto cuando pasas el ratón (Hover) */
+.main-nav a:hover { color: var(--color-acento); }
+
+/* Estilo base para los enlaces del menú */
+.main-nav a {
+    text-decoration: none;
+    color: #333; /* Color de texto normal */
+    padding: 10px 15px;
+    margin: 0 5px;
+    transition: all 0.3s ease; /* Para que el cambio de color sea suave */
+    display: inline-block;
+    position: relative; /* Necesario para el efecto de la línea inferior */
+}
+
+/* Efecto cuando pasas el ratón (Hover) */
+
+
+/* Estilo para la CLASE ACTIVE (La página donde estás) */
+.main-nav a.active {
+    color: var(--color-acento); /* Color destacado */
+    font-weight: bold; /* Texto en negrita para resaltar */
+}
+
+/* Opcional: Una línea debajo del enlace activo */
+.main-nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 1px;
+    background-color: var(--color-acento);
+    border-radius: 1px;
+}
+
+
+
+/* Idiomas */
+.lang-dropdown { margin-left: 20px; }
+.lang-dropbtn { background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+
+/* --- BANNER PRINCIPAL (PARALLAX) --- */
+.parallax-header {
+    position: relative;
+    height: 85vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.slider-background {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    opacity: 0.7; /* Para que el texto se lea mejor */
+    animation: sliderAnim 24s infinite;
+}
+
+@keyframes sliderAnim {
+    0%, 20% { background-image: url('../assets/img/foto3.webp'); }
+    25%, 45% { background-image: url('../assets/img/foto5.webp'); }
+    50%, 70% { background-image: url('../assets/img/foto2.webp'); }
+    75%, 100% { background-image: url('../assets/img/foto6.webp'); }
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-logo { width: 150px; margin-bottom: 20px; filter: brightness(0) invert(1); }
+
+.parallax-content h2 {
+    color: white;
+    font-family: var(--fuente-titulos);
+    font-size: 3rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- RESPONSIVE (CELULARES) --- */
+@media (max-width: 768px) {
+    h2 { font-size: 1.8rem; }
+
+    .menu-toggle { display: flex; }
+
+    /* Menú colapsado */
+    .main-nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px 0;
+        border-bottom: 2px solid var(--color-acento);
+    }
+
+    .main-nav.active { display: flex; }
+
+    .main-nav a {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .parallax-content h2 { font-size: 1.8rem; }
+    
+    .lang-dropdown { display: none; } /* Opcional: ocultar idiomas o moverlos al nav */
+}
+
+
+/*2 parte*/
+/* --- ANIMACIONES --- */
+@keyframes fadeInHero {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* --- LOGO DEL BANNER (HERO) --- */
+.hero-logo {
+    width: 220px;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0; 
+    animation: fadeInHero 1.5s ease-out forwards;
+    animation-delay: 0.3s;
+    filter: brightness(0) invert(1); /* Asegura que sea blanco */
+}
+
+/* --- TÍTULO DEL BANNER --- */
+#hero-title {
+    font-family: var(--fuente-titulos) !important; /* Forzamos la fuente de marca */
+    font-size: 2.8rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Ajusta según el estilo del footer */
+    font-weight: bold;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+    max-width: 850px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeInHero 1.5s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+/* --- LOGO DEL MENÚ (NAV) --- */
+.nav-logo {
+    width: 45px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+/* --- SERVICIOS (GRID) --- */
+.servicios-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.servicio-item {
+    width: 180px;
+    display: flex;           /* Activamos Flexbox */
+    flex-direction: column;  /* Elementos uno sobre otro */
+    align-items: center;     /* Centrado horizontal */
+    justify-content: flex-start; /* Alinea al inicio para que el texto no baile */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.servicio-item:hover { transform: translateY(-8px); }
+
+.servicio-item img {
+    height: 45px;            /* Forzamos una altura fija para todos los iconos */
+    width: auto;             /* Mantiene la proporción */
+    margin-bottom: 15px;     /* Espacio constante entre icono y texto */
+    display: block;
+    object-fit: contain;     /* Asegura que el icono no se deforme */
+}
+
+.servicio-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.2;        /* Evita que párrafos largos empujen el diseño */
+    min-height: 2.4em;       /* Reserva espacio para 2 líneas de texto */
+    display: flex;           /* Para centrar el texto verticalmente si es una sola línea */
+    align-items: center;
+}
+
+/* --- GALERÍA 2X2 (SIMÉTRICA) --- */
+.galeria-grid {
+    display: grid;
+    /* Crea 2 columnas iguales */
+    grid-template-columns: repeat(2, 1fr)!important;  
+    gap: 20px;
+    max-width: 1000px; /* Centra el bloque de 4 fotos */
+    margin: 30px auto;
+    padding: 0 10px;
+}
+
+.habitacion-card {
+    position: relative;
+    height: 350px; /* Altura controlada */
+    overflow: hidden;
+    border-radius: 4px;
+    display: block;
+}
+
+.habitacion-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto se estire feo */
+    transition: transform 0.5s ease;
+}
+
+.habitacion-card:hover img {
+    transform: scale(1.08);
+}
+
+/* --- AJUSTE PARA CELULARES PEQUEÑOS --- */
+@media (max-width: 480px) {
+    .galeria-grid {
+        /* Si el celular es muy angosto, mejor 1 sola columna para que se vean bien */
+        grid-template-columns: 1fr; 
+    }
+    .habitacion-card {
+        height: 250px;
+    }
+}
+
+/* Ajuste para pantallas grandes: si quieres que se estiren un poco más */
+@media (min-width: 1200px) {
+    .habitacion-card {
+        flex: 0 0 25%;         /* En pantallas muy grandes, caben 4 exactas */
+    }
+    .galeria-grid {
+        overflow-x: hidden;    /* Quitamos el scroll si caben todas */
+        justify-content: center;
+    }
+}
+
+.habitacion-card {
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+    display: block;
+}
+
+.habitacion-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.habitacion-card:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    text-align: left;
+}
+
+.room-name {
+    font-family: var(--fuente-titulos);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+/* --- SELECTOR DE IDIOMA --- */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    min-width: 120px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.lang-dropdown:hover .lang-content {
+    display: block;
+}
+
+.lang-content a {
+    color: var(--color-texto);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.lang-content a:hover {
+    background-color: #f9f9f9;
+    color: var(--color-acento);
+}
+
+/* --- RESPONSIVE AJUSTES FINALES --- */
+@media (max-width: 768px) {
+    #hero-title {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+    
+    .servicios-grid {
+        gap: 20px;
+    }
+
+    .servicio-item {
+        width: 40%; /* Dos columnas en móvil */
+    }
+}
+
+
+
+
+/* --- 3 parte --- */
+/* --- GALERIA HABITACIONES --- */
+/* Contenedor principal de la galería */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Tarjeta de habitación (el enlace) */
+.habitacion-card {
+    position: relative; /* Necesario para posicionar el texto encima */
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 350px; /* Ajusta la altura a tu gusto */
+}
+
+.habitacion-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+/* 1. Asegura que el contenedor no deje salir nada */
+/* Contenedor del Slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 700px; /* Aumentamos la altura  */
+    overflow: hidden;
+    border-radius: 0; /* Bordes totalmente rectos */
+    background-color: #000;
+}
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animación suave al mover */
+    width: 100%;
+}
+
+/* Las imágenes dentro del slider */
+.slide {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover; /* Mantiene la proporción sin deformar */
+    border-radius: 0; /* Bordes cuadrados para la imagen también */
+    display: none;
+}
+/* Botones de navegación (estilo básico) */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.next { right: 10px; }
+.prev { left: 10px; }
+
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+/* 3. Evita que el contenedor de la descripción se rompa */
+.room-detail-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* 4. Ajuste para celulares */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 300px; /* Altura más pequeña en móviles */
+    }
+}
+
+
+/* Capa sobre la imagen para el texto */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3); /* Oscurece un poco la foto para que se lea el texto */
+    transition: opacity 0.4s ease; /* Efecto de desvanecimiento */
+}
+
+.room-name {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mayor legibilidad */
+}
+
+/* --- EFECTO HOVER (Al pasar el mouse) --- */
+
+/* El nombre y el fondo oscuro se desvanecen */
+.habitacion-card:hover .overlay {
+    opacity: 0;
+}
+
+/* La imagen hace un ligero zoom */
+.habitacion-card:hover img {
+    transform: scale(1.1);
+}
+.room-amenities {
+    list-style: none; /* Elimina las viñetas */
+    padding: 0;       /* Quita el espacio a la izquierda */
+    margin-top: 20px; /* Un poco de separación con el párrafo de arriba */
+}
+
+/* Espaciado entre cada ítem de la lista */
+.room-amenities li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* --- 4 parte --- */
+
+/* --- 1. FOOTER (Elegante y Sobrio) --- */
+.main-footer {
+    background-color: #fafafa;
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.footer-logo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--color-principal);
+}
+
+.footer-links {
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-acento);
+    margin: 0 15px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-principal);
+}
+
+/* --- 2. CONTACTO (Grid Moderno) --- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.contact-info h2 { 
+    font-family: var(--fuente-titulos); 
+    font-size: 2.2rem;
+    margin-bottom: 25px; 
+}
+
+.contact-info p { 
+    margin-bottom: 20px; 
+    line-height: 1.8;
+    color: #555;
+}
+
+.contact-form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    border: 1px solid #f2f2f2;
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.btn-send {
+    background-color: #4a5d4a; /* Verde bosque */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.btn-send:hover { background-color: #2e3b2e; }
+
+/* --- 3. QUIÉNES SOMOS --- */
+.about-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                      url('../assets/img/imagen7.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* --- 4. UBICACIÓN Y MAPA --- */
+
+#ubicacion-full {
+    background-color: #f9f9f9; /* Mantenemos el fondo gris */
+    width: 100%;
+    max-width: 100% !important; /* Permitimos que el gris toque los bordes */
+    margin: 80px 0 0 0;
+    padding: 60px 0 0 0; /* Espacio arriba para el título */
+    text-align: center;
+    overflow: hidden; /* Evita scroll horizontal no deseado */
+}
+
+/* El título y párrafo se mantienen centrados y con márgenes normales */
+.map-header {
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+/* EL MAPA: Aquí es donde se expande al 100% */
+#map {
+    height: 500px; /* Altura de impacto */
+    width: 100vw;  /* Ocupa todo el ancho de la ventana */
+    position: relative;
+    /* Técnica para centrar un elemento de 100vw dentro de un contenedor */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    border: none;
+    border-radius: 0; /* Sin esquinas redondeadas para que se vea infinito */
+    z-index: 1;
+}
+
+/* El contenedor del botón también mantiene el fondo gris */
+.cta-container {
+    background-color: #f9f9f9;
+    padding: 40px 0 60px 0;
+    margin: 0; /* Eliminamos márgenes para que no haya huecos blancos */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    #map {
+        height: 350px;
+    }
+    #ubicacion-full {
+        padding-top: 40px;
+    }
+}
+
+
+
+
+.btn-sobrio {
+    display: inline-block;
+    padding: 14px 35px;
+    border: 1px solid var(--color-principal);
+    background-color: transparent;
+    color: var(--color-principal);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-sobrio:hover {
+    background-color: var(--color-principal);
+    color: #fff;
+}
+
+/* --- 5. CONSEJOS Y FAQ (Naturaleza) --- */
+.tips-list { list-style: none; padding: 0; max-width: 800px; margin: 40px auto; }
+
+.tips-list li {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-left: 4px solid #4a5d4a; /* Verde coherente */
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.03);
+    text-align: left;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.faq-item h4 {
+    color: #4a5d4a;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* --- 6. RESPONSIVE --- */
+@media (max-width: 768px) {
+    .contact-container { grid-template-columns: 1fr; gap: 40px; }
+    
+    .footer-links a {
+        display: block;
+        margin: 15px 0;
+    }
+
+    #map { height: 350px; }
+
+    .about-banner {
+        background-attachment: scroll; /* El parallax suele fallar en móviles */
+        height: 40vh;
+    }
+}
+
+/*5 parte---------------------------------------------------------------------------------------/
+/* Ajustes para Tablets y Celulares (Menos de 768px) */
+/* --- 1. ESTILOS DE IDIOMA (Escritorio y General) --- */
+/* ==========================================
+   1. IDIOMAS (ESCRITORIO)
+   ========================================== */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1100;
+}
+
+.lang-dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fuente-moderna);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.lang-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    min-width: 140px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    border: 1px solid #f2f2f2;
+    overflow: hidden;
+}
+
+.lang-dropdown:hover .lang-content {
+    display: block;
+}
+
+.lang-content a {
+    color: var(--color-texto);
+    padding: 12px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.lang-content a:hover {
+    background-color: #f9f9f9;
+    color: var(--color-acento);
+}
+
+/* ==========================================
+   2. PÁGINA DE CONSTRUCCIÓN (RESET)
+   ========================================== */
+.construction-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important; 
+    max-width: 100% !important; 
+    margin: 0 !important; 
+    padding: 80px 20px !important;
+    min-height: 70vh;
+    box-sizing: border-box !important;
+}
+
+.construction-content {
+    width: 100%;
+    max-width: 700px !important;
+    margin: 0 auto !important;
+}
+
+.construction-img {
+    display: block !important;
+    margin: 0 auto 30px auto !important;
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+}
+
+/* ==========================================
+   3. BOTÓN WHATSAPP FLOTANTE
+   ========================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: translateY(-5px);
+    color: white;
+}
+
+.whatsapp-icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* ==========================================
+   4. RESPONSIVE GENERAL (768px - TABLET/MÓVIL)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Header */
+    .header-container {
+        flex-direction: row; 
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    /* Menú Hamburguesa */
+    .menu-toggle {
+        display: flex !important; /* Asegura que el botón se vea */
+    }
+
+    .main-nav {
+        display: none !important; /* Oculto por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    .main-nav.active {
+        display: flex !important; /* Se muestra con JS */
+    }
+
+    .main-nav a {
+        padding: 15px;
+        margin: 0;
+        border-bottom: 1px solid #f2f2f2;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Idiomas en móvil */
+    .lang-dropdown {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #f2f2f2;
+    }
+    
+    .lang-content {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: #fafafa;
+        width: 100%;
+        display: block; /* En móvil se ven las opciones desplegadas */
+    }
+
+    /* Banner y Textos */
+    .parallax-header { height: 55vh; }
+    #hero-title { font-size: 1.8rem; padding: 0 20px; }
+    
+    /* WhatsApp en móvil pequeño */
+    @media (max-width: 480px) {
+        .whatsapp-text { display: none; }
+        .whatsapp-float { padding: 12px; border-radius: 50%; bottom: 15px; right: 15px; }
+    }
+}
+
+/* ==========================================
+   5. RESPONSIVE CELULAR PEQUEÑO (600px)
+   ========================================== */
+@media (max-width: 600px) {
+    .servicios-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr; /* Una columna para que se luzcan las fotos */
+    }
+
+    .habitacion-card {
+        height: 280px;
+    }
+}
+
+/* ==========================================
+   6. RESPONSIVE DETALLE HABITACIONES (850px)
+   ========================================== */
+@media (max-width: 850px) {
+    .room-info {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+
+    .slider-container {
+        height: 320px;
+    }
+
+    .room-header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ==========================================
+   Quienes Somos
+   ========================================== */
+.container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.lead-text {
+    font-size: 1.4rem;
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    color: var(--color-acento);
+    line-height: 1.6;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;            /* Deja que la altura se ajuste sola */
+    max-height: 600px;       /* Límite para que no sea gigante */
+    object-fit: contain;     /* Muestra la foto completa sin recortar */
+    background-color: #f9f9f9; /* Fondo sutil por si quedan espacios */
+    border-radius: 2px;
+    box-shadow: 15px 15px 0px var(--color-acento);
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-commitment {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.commitment-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border: 1px solid #eee;
+}
+
+/* Responsive Quiénes Somos */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-image img {
+        height: 300px;
+        box-shadow: 10px 10px 0px var(--color-acento);
+    }
+    .lead-text {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* --- SECCIÓN LEGADO VISUAL --- */
+.visual-legacy {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.legacy-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.legacy-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espacio entre fotos */
+    width: 100%;
+    max-width: 1400px; /* Para que no se estiren al infinito en monitores 4K */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.legacy-item {
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.legacy-item img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción panorámica 3:1 */
+    display: block;
+    object-fit: cover;
+    border-radius: 2px;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Efecto sutil al pasar el mouse */
+.legacy-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Pie de foto elegante */
+.legacy-item figcaption {
+    margin-top: 12px;
+    font-family: var(--fuente-moderna);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    text-align: right;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .visual-legacy {
+        padding: 60px 0;
+    }
+    .legacy-container {
+        gap: 25px;
+        padding: 0 10px;
+    }
+    .legacy-item figcaption {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+}

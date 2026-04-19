@@ -1,0 +1,93 @@
+/* =========================================
+   PÁGINA DE CONSTRUCCIÓN - CASA EL CEDRO
+   ========================================= */
+
+.construction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    
+    /* SOLUCIÓN AL CENTRADO: */
+    width: 100%;           /* NUEVO: Asegura que use todo el ancho */
+    margin: 0 auto;        /* NUEVO: Centra el bloque si tiene ancho máximo */
+    box-sizing: border-box; /* NUEVO: Evita que el padding empuje el contenido */
+}
+
+.construction-content {
+    width: 100%;           /* Asegura que el div interno también esté centrado */
+}
+
+.construction-img {
+    max-width: 450px;
+    width: 90%;
+    height: auto;
+    margin-left: auto;     /* NUEVO: Refuerzo de centrado horizontal */
+    margin-right: auto;    /* NUEVO: Refuerzo de centrado horizontal */
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+/* El resto de tu código igual... */
+.construction-content h2 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.construction-content p {
+    font-size: 1.2rem;
+    color: #5d6d7e;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    line-height: 1.8;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #2c3e50;
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid #2c3e50;
+}
+
+.btn-back:hover {
+    background-color: transparent;
+    color: #2c3e50 !important;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .construction-content h2 {
+        font-size: 2rem;
+    }
+    .construction-content p {
+        font-size: 1rem;
+    }
+    .construction-img {
+        max-width: 300px;
+    }
+}
+.construction-img {
+    max-width: 350px; /* Tamaño ideal para que no rompa el diseño */
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

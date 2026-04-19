@@ -1,0 +1,234 @@
+.actividades-main {
+    max-width: 1100px;
+    margin: 120px auto 60px; /* Margen superior para no chocar con el header */
+    padding: 0 20px;
+}
+
+.page-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-intro h1 { font-size: 2.5rem; color: #2c3e50; }
+
+/* --- AJUSTES EN TU CSS EXISTENTE --- */
+
+.actividad-item {
+    display: flex;
+    flex-direction: row; /* Aseguramos que en desktop sea horizontal */
+    background: #fff;
+    margin-bottom: 40px;
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.act-slider-container {
+    flex: 1.2;
+    position: relative;
+    height: 350px; /* Altura fija para desktop */
+    background: #eee;
+    width: 100%; /* Asegura que ocupe el ancho disponible */
+}
+
+/* --- NUEVA SECCIÓN PARA MÓVILES (REEMPLAZA TU @MEDIA ACTUAL) --- */
+
+@media (max-width: 768px) {
+    .actividades-main {
+        margin-top: 80px; /* Reducimos margen superior en móvil */
+        padding: 0 15px;
+    }
+
+    .actividad-item { 
+        flex-direction: column; /* Apila imagen arriba y texto abajo */
+    }
+
+    .act-slider-container { 
+        flex: none; /* Desactivamos el flex para que respete el ancho total */
+        width: 100%;
+        height: 280px; /* Altura suficiente para que la imagen se vea bien en vertical */
+    }
+
+    .new-act-slider-container {
+        height: 350px; /* Ajuste para el slider grande en móviles */
+    }
+
+    .act-content {
+        padding: 25px 15px; /* Menos padding para aprovechar espacio */
+    }
+
+    .act-content h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Ajuste para las tarjetas técnicas en móvil */
+    .datos-tecnicos {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+    
+    /* Aseguramos que el mapa no se rompa */
+    #map-juan-curi, 
+    #map-laguna-grande, 
+    #map-pozo-zaque,
+    #map-laguna-azul,
+    #map-cascada-escondida,
+    #map-calle-de-piedra,
+    #map-pozo-lajas,
+    #map-pozo-paraiso,
+    #map-cascada-las-flores,
+    #map-la-variante {
+        height: 350px;
+    }
+}
+
+
+.new-act-slider-container {
+    flex: 1.2;
+    position: relative;
+    height: 600px;
+    background: #eee;
+}
+
+.act-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.act-slide.active { opacity: 1; }
+
+/* Contenedor de texto de la actividad */
+.act-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* Centra el título y el párrafo */
+}
+
+/* Título de la actividad */
+.act-content h2 { 
+    margin-bottom: 15px; 
+    color: #27ae60; 
+    font-size: 1.8rem;
+}
+
+/* Párrafo descriptivo */
+.act-content p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Centrado del botón */
+.act-content .btn-sobrio {
+    align-self: center; /* Centra el botón horizontalmente dentro del flex */
+    padding: 12px 30px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.next { right: 0; }
+.prev { left: 0; }
+
+@media (max-width: 768px) {
+    .actividad-item { flex-direction: column; }
+    .act-slider-container { height: 250px; }
+}
+
+.detalle-container { max-width: 900px; margin: 120px auto; padding: 20px; }
+
+/* TARJETAS DE PRESENTACION */
+.datos-tecnicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.dato-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 0px;
+    text-align: center;
+}
+
+.dato-card img {
+    margin: 0 auto 15px auto;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0; 
+}
+
+.dato-card p {
+    margin-top: 0; 
+    padding-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    /* Si quieres que todos los textos empiecen a la misma altura: */
+    flex-grow: 1; 
+}
+
+.btn-back { text-decoration: none; color: #27ae60; font-weight: bold; }
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 0px;
+    margin: 30px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+    #map-juan-curi, 
+    #map-laguna-grande, 
+    #map-pozo-zaque,
+    #map-laguna-azul,
+    #map-cascada-escondida,
+    #map-calle-de-piedra,
+    #map-pozo-lajas,
+    #map-pozo-paraiso,
+    #map-cascada-las-flores,
+    #map-la-variante  {
+    height: 500px;
+    width: 100% !important;
+    max-width: 900px;
+    margin: 30px auto !important;
+    border-radius: 0px;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+}
+
+
