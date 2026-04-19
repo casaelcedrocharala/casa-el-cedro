@@ -1,0 +1,83 @@
+{
+  "es": {
+    "meta-title": "Ribera del Río Pienta | Descanso Natural | Casa El Cedro",
+    "meta-desc": "Disfruta de la paz y las aguas cristalinas del Río Pienta en Charalá. Un balneario natural a pasos de Casa El Cedro, ideal para nadar y relajarse en familia.",
+    "menu": {
+      "nav-home": "Inicio",
+      "nav-about": "Quiénes Somos",
+      "nav-activities": "Actividades",
+      "nav-contact": "Contáctenos"
+    },
+    "back": "← Volver a actividades",
+    "back-1": "← Volver a actividades",
+    "act-title": "Río Pienta",
+    "act-p1": "A tan solo unos pasos de Casa El Cedro, el río Pienta ofrece aguas cristalinas y refrescantes rodeadas de vegetación nativa. Es el lugar perfecto para nadar, relajarse o simplemente dejarse envolver por la frescura de la naturaleza, un espacio donde el tiempo parece detenerse.",
+    "act-p2": "Para llegar, se ingresa por un camino dentro de la reserva que conduce directamente hasta la ribera del río. Allí, la serenidad del entorno y el murmullo del agua crean un escenario ideal para reconectarse con lo esencial.",
+    "card-title-1": "Ubicación",
+    "card-desc-1": "A solo 10 minutos de Casa El Cedro. Un sendero que cruza nuestra reserva directa hacia el río.",
+    "card-title-2": "Clima y Altitud",
+    "card-desc-2": "A 1.300 m s. n. m. Disfruta de un clima templado perfecto con una media de 21°C.",
+    "card-title-3": "Qué llevar",
+    "card-desc-3": "Calzado de buen agarre, repelente, bloqueador solar, traje de baño y tus snacks favoritos.",
+    "card-title-4": "Pozos Naturales",
+    "card-desc-4": "Aguas profundas y tranquilas del río, ideales para nadar y refrescarte en los días de sol.",
+    "card-title-5": "Avistamiento",
+    "card-desc-5": "Hogar de diversas especies nativas del bosque andino. ¡No olvides tus binoculares!",
+    "card-title-6": "Picnic",
+    "card-desc-6": "Un espacio natural e increíble junto a la orilla, perfecto para pasar el día y parchar."
+  },
+  "en": {
+    "meta-title": "Pienta River Banks | Natural Relaxation | Casa El Cedro",
+    "meta-desc": "Enjoy the peace and crystal-clear waters of the Pienta River in Charala. A natural swimming spot steps away from Casa El Cedro, perfect for relaxing and nature lovers.",
+    "menu": {
+      "nav-home": "Home",
+      "nav-about": "About Us",
+      "nav-activities": "Activities",
+      "nav-contact": "Contact Us"
+    },
+    "back": "← Back to activities",
+    "back-1": "← Back to activities",
+    "act-title": "Pienta River",
+    "act-p1": "Just steps away from Casa El Cedro, the Pienta River offers crystal-clear and refreshing waters surrounded by native vegetation. It is the perfect place to swim, relax, or simply let yourself be enveloped by the freshness of nature, a space where time seems to stand still.",
+    "act-p2": "To get there, you enter through a path within the reserve that leads directly to the riverbank. There, the serenity of the environment and the murmur of the water create an ideal setting to reconnect with the essentials.",
+    "card-title-1": "Location",
+    "card-desc-1": "Just 10 minutes from Casa El Cedro. A path through our reserve leading directly to the river.",
+    "card-title-2": "Climate and Altitude",
+    "card-desc-2": "1,300 meters above sea level. Enjoy a perfect temperate climate with an average of 21°C.",
+    "card-title-3": "What to bring",
+    "card-desc-3": "Good-grip shoes, repellent, sunscreen, swimsuit, and your favorite snacks.",
+    "card-title-4": "Natural Pools",
+    "card-desc-4": "Deep and calm river waters, ideal for swimming and cooling off on sunny days.",
+    "card-title-5": "Bird Watching",
+    "card-desc-5": "Home to various native species of the Andean forest. Don't forget your binoculars!",
+    "card-title-6": "Picnic",
+    "card-desc-6": "An incredible natural space by the shore, perfect for spending the day and hanging out."
+  },
+  "de": {
+    "meta-title": "Ufer des Río Pienta | Natürliche Entspannung | Casa El Cedro",
+    "meta-desc": "Genießen Sie die Ruhe und das kristallklare Wasser des Río Pienta in Charalá. Ein natürlicher Badeplatz nur wenige Schritte von Casa El Cedro entfernt.",
+    "menu": {
+      "nav-home": "Startseite",
+      "nav-about": "Über uns",
+      "nav-activities": "Aktivitäten",
+      "nav-contact": "Kontakt"
+    },
+    "back": "← Zurück zu Aktivitäten",
+    "back-1": "← Zurück zu Aktivitäten",
+    "act-title": "Pienta Fluss",
+    "act-p1": "Nur wenige Schritte von Casa El Cedro entfernt bietet der Pienta-Fluss kristallklares und erfrischendes Wasser, umgeben von einheimischer Vegetation. Ein idealer Ort zum Schwimmen und Entspannen.",
+    "act-p2": "Der Weg führt durch ein Pfad innerhalb des Reservats direkt zum Flussufer. Die Stille der Umgebung und das Murmeln des Wassers laden dazu ein, sich mit dem Wesentlichen zu verbinden.",
+    "card-title-1": "Standort",
+    "card-desc-1": "Nur 10 Minuten von Casa El Cedro entfernt. Ein Pfad durch unser Reservat direkt zum Fluss.",
+    "card-title-2": "Klima und Höhe",
+    "card-desc-2": "1.300 m ü. M. Genießen Sie ein perfektes gemäßigtes Klima mit durchschnittlich 21°C.",
+    "card-title-3": "Mitzubringen",
+    "card-desc-3": "Schuhe mit gutem Grip, Insektenschutz, Sonnencreme, Badeanzug und Snacks.",
+    "card-title-4": "Naturbecken",
+    "card-desc-4": "Tiefe und ruhige Flussabschnitte, ideal zum Schwimmen und Erfrischen an sonnigen Tagen.",
+    "card-title-5": "Vogelbeobachtung",
+    "card-desc-5": "Heimat verschiedener einheimischer Arten des Andenwaldes. Ferngläser nicht vergessen!",
+    "card-title-6": "Picknick",
+    "card-desc-6": "Ein unglaublicher Naturraum am Ufer, perfekt für einen entspannten Tag im Freien."
+  }
+}

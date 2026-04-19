@@ -1,0 +1,107 @@
+{
+  "es": {
+    "menu": {
+      "nav-home": "Inicio",
+      "nav-about": "Quiénes Somos",
+      "nav-activities": "Actividades",
+      "nav-contact": "Contáctenos"
+    },
+    "main-title": "Experiencias en Charalá",
+    "main-subtitle": "Descubre los tesoros naturales que rodean nuestra casa. Aventuras únicas en el corazón de Santander.",
+    "act1-title": "Cascadas de Juan Curí",
+    "act1-desc": "Una imponente caída de agua de más de 200 metros. Ideal para caminatas ecológicas y deportes extremos como el torrentismo.",
+    "act2-title": "Laguna Grande",
+    "act2-desc": "Alístate para un día de aventura entre imponentes paisajes de alta montaña y recorre el sendero que te llevará hasta una majestuosa laguna.",
+    "act3-title": "Ribera del Río Pienta",
+    "act3-desc": "Disfruta de un baño refrescante en las aguas cristalinas del río que cruza nuestra región. Un espacio de paz total.",
+    "act4-title": "Pozo Zaque",
+    "act4-desc": "Sumérgete en una caída de agua natural rodeada de vegetación exuberante. El sonido de la cascada y la tranquilidad ofrecen un refugio incomparable.",
+    "act5-title": "Laguna Azul",
+    "act5-desc": "Déjate cautivar por el espejo de agua más puro de la región. Un rincón escondido en Cincelada donde el verde de la montaña se funde con la calma.",
+    "act6-title": "Cascada Escondida",
+    "act6-desc": "Descubre un rincón de frescura donde el agua se abre paso entre rocas milenarias. Un salto natural perfecto para quienes buscan la esencia más salvaje.",
+    "act7-title": "Calle de Piedra",
+    "act7-desc": "Una calle de piedra labrada por el tiempo y bañada por aguas cristalinas. Si buscas paz y aventura, este rincón secreto te espera.",
+    "act8-title": "Pozo Lajas",
+    "act8-desc": "Uno de los lugares emblemáticos de Charalá, dos pozos profundos seguidos de una gran laja vertical.",
+    "act9-title": "Pozo Paraíso",
+    "act9-desc": "Disfruta de un baño refrescante en las aguas cristalinas del río que cruza nuestra región. Un espacio de paz total.",
+    "act10-title": "Cascada Las Flores",
+    "act10-desc": "Una aventura corta de canyoning y llegas a un lugar escondido en medio de la naturaleza.",
+    "act11-title": "La Variante - Encino",
+    "act11-desc": "Un lugar surrealista, donde dos ríos tallaron las piedras para abrirse paso dentro del cañón, un lugar para conectarse con uno mismo.",
+    "common": {
+      "btn-translate": "Ver detalles y cómo llegar"
+    }
+  },
+  "en": {
+    "menu": {
+      "nav-home": "Home",
+      "nav-about": "About Us",
+      "nav-activities": "Activities",
+      "nav-contact": "Contact Us"
+    },
+    "main-title": "Experiences in Charalá",
+    "main-subtitle": "Discover the natural treasures surrounding our home. Unique adventures in the heart of Santander.",
+    "act1-title": "Juan Curí Waterfalls",
+    "act1-desc": "An impressive waterfall over 200 meters high. Ideal for ecological hikes and extreme sports like canyoning.",
+    "act2-title": "Laguna Grande",
+    "act2-desc": "Get ready for a day of adventure among imposing high mountain landscapes on the trail to a majestic lagoon.",
+    "act3-title": "Pienta River Banks",
+    "act3-desc": "Enjoy a refreshing swim in the crystal-clear waters of the river that crosses our region. A place of total peace.",
+    "act4-title": "Pozo Zaque",
+    "act4-desc": "Immerse yourself in a natural waterfall surrounded by lush vegetation. The sound of the falls and the tranquility offer an incomparable refuge.",
+    "act5-title": "Blue Lagoon",
+    "act5-desc": "Be captivated by the purest water mirror in the region. A hidden gem in Cincelada where mountain green blends with calm.",
+    "act6-title": "Hidden Waterfall",
+    "act6-desc": "Discover a cool corner where water carves its way through ancient rocks. A natural jump perfect for those seeking the purest mountain essence.",
+    "act7-title": "Stone Street",
+    "act7-desc": "A stone path shaped by time and bathed by crystal-clear waters. If you seek peace and adventure, this secret corner is waiting for you.",
+    "act8-title": "Pozo Lajas",
+    "act8-desc": "One of Charalá's iconic spots, featuring two deep pools followed by a large vertical stone slab.",
+    "act9-title": "Paradise Pool",
+    "act9-desc": "Enjoy a refreshing swim in the crystal-clear waters of the river crossing our region. A space of total peace.",
+    "act10-title": "Las Flores Waterfall",
+    "act10-desc": "A short canyoning adventure that leads you to a hidden spot in the middle of nature.",
+    "act11-title": "La Variante - Encino",
+    "act11-desc": "A surreal place where two rivers carved the stones through the canyon. A place to contemplate and connect with yourself.",
+    "common": {
+      "btn-translate": "View details and directions"
+    }
+  },
+  "de": {
+    "menu": {
+      "nav-home": "Startseite",
+      "nav-about": "Über uns",
+      "nav-activities": "Aktivitäten",
+      "nav-contact": "Kontakt"
+    },
+    "main-title": "Erlebnisse in Charalá",
+    "main-subtitle": "Entdecken Sie die Naturschätze rund um unser Haus. Einzigartige Abenteuer im Herzen von Santander.",
+    "act1-title": "Juan Curí Wasserfälle",
+    "act1-desc": "Ein beeindruckender Wasserfall von über 200 Metern Höhe. Ideal für ökologische Wanderungen und Canyoning.",
+    "act2-title": "Laguna Grande",
+    "act2-desc": "Bereiten Sie sich auf einen Abenteuertag in Hochgebirgslandschaften vor und wandern Sie zu einer majestätischen Lagune.",
+    "act3-title": "Ufer des Río Pienta",
+    "act3-desc": "Genießen Sie ein erfrischendes Bad im kristallklaren Wasser des Flusses unserer Region. Ein Ort vollkommener Ruhe.",
+    "act4-title": "Pozo Zaque",
+    "act4-desc": "Tauchen Sie ein in einen natürlichen Wasserfall inmitten üppiger Vegetation. Ein unvergleichlicher Rückzugsort der Stille.",
+    "act5-title": "Blaue Lagune",
+    "act5-desc": "Lassen Sie sich vom reinsten Wasserspiegel der Region verzaubern. Ein versteckter Winkel, in dem Bergrün und Ruhe verschmelzen.",
+    "act6-title": "Versteckter Wasserfall",
+    "act6-desc": "Entdecken Sie eine Oase der Frische, in der sich das Wasser durch jahrtausendealte Felsen bahnt. Perfekt für die Suche nach wilder Natur.",
+    "act7-title": "Calle de Piedra",
+    "act7-desc": "Ein durch die Zeit geformter Steinweg, umspült von kristallklarem Wasser. Ein geheimer Winkel für Ruhe und Abenteuer.",
+    "act8-title": "Pozo Lajas",
+    "act8-desc": "Einer der emblematischen Orte von Charalá: zwei tiefe Wasserbecken und eine große vertikale Steinplatte.",
+    "act9-title": "Paradies-Becken",
+    "act9-desc": "Genießen Sie ein erfrischendes Bad im kristallklaren Wasser des Flusses unserer Region. Ein Ort vollkommener Ruhe.",
+    "act10-title": "Wasserfall Las Flores",
+    "act10-desc": "Ein kurzes Canyoning-Abenteuer führt Sie zu einem versteckten Ort inmitten der Natur.",
+    "act11-title": "La Variante - Encino",
+    "act11-desc": "Ein surrealer Ort, an dem zwei Flüsse Steine in den Canyon gehaucht haben. Ein Ort zum Innehalten und sich selbst Finden.",
+    "common": {
+      "btn-translate": "Details und Anfahrt"
+    }
+  }
+}

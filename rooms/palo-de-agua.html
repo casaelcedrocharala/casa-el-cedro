@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitación Palo de Agua | Casa El Cedro</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "HotelRoom",
+  "name": "Habitación Palo de Agua",
+  "description": "Habitación con cama doble, baño privado y vista a los jardines en Charalá.",
+  "image": "https://casaelcedro.com/assets/img/palo-de-agua-1.jpg",
+  "offers": {
+    "@type": "Offer",
+    "price": "250000",
+    "priceCurrency": "COP",
+    "availability": "https://schema.org/InStock",
+    "url": "https://casaelcedro.com/palo-de-agua"
+  },
+  "containedInPlace": {
+    "@type": "Hotel",
+    "name": "Casa El Cedro",
+    "telephone": "+573192261294",
+    "url": "https://casaelcedro.com"
+  },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "WiFi gratis", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Estacionamiento", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Baño privado", "value": true }
+  ]
+}
+</script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo Principal -->
+            <a href="index.html" class="logo-area" style="text-decoration: none; color: inherit;">
+                <img src="../assets/icons/logo-svg.svg" alt="Logo Casa El Cedro" class="nav-logo">
+                <h1 id="title">Casa El Cedro | Habitación</h1>
+            </a>
+
+            <!-- Botón de Hamburguesa (Móviles) -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navegación -->
+            <nav class="main-nav" id="main-nav">
+                <a href="../index.html" id="nav-home">Inicio</a>
+                <a href="../quienes-somos.html" id="nav-about">Quiénes Somos</a>
+                <a href="../en-construccion.html" id="nav-activities">Actividades</a>
+                <a href="../contacto.html" id="nav-contact">Contáctenos</a>
+            </nav>
+
+            <!-- Selector de Idioma -->
+            <div class="lang-dropdown">
+                <button class="lang-dropbtn">
+                    <img src="../assets/icons/idiomas.svg" alt="Idioma" width="30">
+                    <span id="current-lang">ES</span>
+                </button>
+                <div class="lang-content">
+                    <a href="#" onclick="changeLanguage('es')">Español</a>
+                    <a href="#" onclick="changeLanguage('en')">English</a>
+                    <a href="#" onclick="changeLanguage('de')">Deutsch</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="room-detail-container">
+    <section class="room-header">
+        <h1 id="room-palo-title">Palo De Agua</h1>
+        <p class="tagline" id="room-palo-tagline">Despierta con el canto de las aves y el aroma del cedro.</p>
+    </section>
+        <!-- Slider de Fotos -->
+        <div class="slider-container">
+            <div class="slider">
+                <img src="../assets/img/palo-de-agua-1.webp" alt="Cama king size en habitación de lujo" class="slide">
+                <img src="../assets/img/palo-de-agua-2.webp" alt="Vista al interior de la casa" class="slide">
+                <img src="../assets/img/palo-de-agua-3.webp" alt="Vista al jardín desde la habitación" class="slide">
+                <img src="../assets/img/palo-de-agua-4.webp" alt="Baño privado minimalista" class="slide">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <section class="room-info">
+        <div class="description">
+            <h2 id="room-palo-subtitle">Tu refugio en la naturaleza</h2>
+            <p id="room-palo-desc">Esta habitación ofrece una experiencia de confort y calidez. Equipada con una cama doble, closet y ventanales con vista a los jardines de la casa; diseño que brindan una experiencia unica en las noches de Charalá.</p>
+            
+            <ul class="room-amenities">
+                <li id="room-palo-item1">✓ Cama Doble</li>
+                <li id="room-palo-item2">✓ Baño Privado con lluvia de agua caliente</li>
+                <li id="room-palo-item3">✓ Vista a los jardines de la casa</li>
+                <li id="room-palo-item4">✓ Desayuno incluido</li>
+            </ul>
+        </div>
+
+        <div class="booking-card">
+            <h3 id="room-price-from">Desde $250.000 / noche</h3>
+            <p id="room-price-note">Tarifa sujeta a temporada</p>
+            <div style="margin-top: 20px;">
+                <div class="cta-container">
+                    <a href="https://www.booking.com/hotel/co/casa-el-cedro.es.html" class="btn-sobrio" id="btn-booking" target="_blank" rel="noopener noreferrer">Reservar en Booking</a>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section id="galeria">
+        <h2 id="gallery-title">Nuestras habitaciones</h2>
+        <div class="galeria-grid">
+            <!-- Habitación 1 -->
+            <a href="palo-de-agua" class="habitacion-card">
+                <img src="../assets/img/palo-de-agua-1.webp" alt="Habitación Palo de Agua">
+                <div class="overlay">
+                    <span class="room-name">Palo de Agua</span>
+                </div>
+            </a>
+            <!-- Habitación 2 -->
+            <a href="espada-san-jorge" class="habitacion-card">
+                <img src="../assets/img/espada-san-jorge-1.webp" alt="Habitación Espada San Jorge">
+                <div class="overlay">
+                    <span class="room-name">Espada San Jorge</span>
+                </div>
+            </a>
+            <!-- Habitación 3 -->
+            <a href="en-construccion" class="habitacion-card">
+                <img src="../assets/img/espada-san-jorge-2.webp" alt="Suite Principal">
+                <div class="overlay">
+                    <span class="room-name">Suite Principal</span>
+                </div>
+            </a>
+            <!-- Habitación 4 -->
+            <a href="en-construccion" class="habitacion-card">
+                <img src="../assets/img/palo-de-agua-3.webp" alt="Habitación Familiar">
+                <div class="overlay">
+                    <span class="room-name">Habitación Familiar</span>
+                </div>
+            </a>
+        </div>
+    </section>
+</main>
+<footer class="main-footer">
+    <div class="footer-container">
+        <h3 class="footer-logo">CASA EL CEDRO</h3>
+        <p class="footer-tagline">Un refugio de paz en contacto con la naturaleza.</p>
+        
+        <div class="footer-links">
+            <a href="mailto:icasaelcedrocharala@gmail.com">Email</a>
+            <a href="tel:+573192261294">Teléfono</a>
+            <a href="https://www.instagram.com/casaelcedro/" target="_blank">Instagram</a>
+        </div>
+        
+        <div class="footer-copy">
+            <p>&copy; 2026 Casa El Cedro. Charalá,Santander, COLOMBIA. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+<a href="https://wa.me/message/TOPCBYBZ7C5AI1" 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <!-- URL corregida para que cargue el icono real -->
+    <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
+    <span class="whatsapp-text" id="whatsapp-msg">¿Necesitas ayuda?</span>
+</a>
+
+    <!-- Script para el Slider --> 
+<script src="../js/script.js"></script>
+</body>
+</html>
