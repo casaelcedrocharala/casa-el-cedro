@@ -325,8 +325,9 @@ header {
 /* --- GALERÍA 2X2 (SIMÉTRICA) --- */
 .galeria-grid {
     display: grid;
-    /* Crea 2 columnas iguales */
-    grid-template-columns: repeat(2, 1fr)!important;  
+    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas iguales */
+    /* Crea 2 columnas iguales 
+    grid-template-columns: repeat(2, 1fr)!important;  */
     gap: 20px;
     max-width: 1000px; /* Centra el bloque de 4 fotos */
     margin: 30px auto;
