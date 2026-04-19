@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Casa El Cedro</title>
+        <link rel="icon" type="image/x-icon" href="/assets/icons/logo-svg.svg">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -12,7 +13,7 @@
     <header>
         <div class="header-container">
             <!-- Logo Principal -->
-            <a href="index.html" class="logo-area" style="text-decoration: none; color: inherit;">
+            <a href="index" class="logo-area" style="text-decoration: none; color: inherit;">
                 <img src="assets/icons/logo-svg.svg" alt="Logo Casa El Cedro" class="nav-logo">
                 <h1 id="title">Casa El Cedro</h1>
             </a>
@@ -65,23 +66,27 @@
             </div>
 
             <!-- Columna 2: Formulario -->
-            <div class="contact-form">
-                <form action="https://formspree.io" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nombre Completo</label>
-                        <input type="text" id="name" name="name" placeholder="Tu nombre..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-send">Enviar Mensaje</button>
-                </form>
-            </div>
+<div class="contact-form">
+    <form id="contact-form">
+        <input type="hidden" name="access_key" value="985c6ca0-0739-4872-8f71-ab9dc23d3c2e">
+
+        <div class="form-group">
+            <label for="name">Nombre Completo</label>
+            <input type="text" name="name" id="name" placeholder="Tu nombre..." required>
+        </div>
+        <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" name="email" id="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        </div>
+
+        <button type="submit" id="btn-send" class="btn-send">Enviar Mensaje</button>
+        <div id="result-message" style="margin-top: 15px;"></div>
+    </form>
+</div>
         </section>
     </main>
 
@@ -110,7 +115,6 @@
     <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
     <span class="whatsapp-text" id="whatsapp-msg">¿Necesitas ayuda?</span>
 </a>
-
-<script src="js/script.js"></script>
+<script src="js/enviar.js"></script>
 </body>
 </html>
