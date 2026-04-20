@@ -183,10 +183,10 @@ header {
 }
 
 @keyframes sliderAnim {
-    0%, 20% { background-image: url('../assets/img/foto3.webp'); }
-    25%, 45% { background-image: url('../assets/img/foto5.webp'); }
-    50%, 70% { background-image: url('../assets/img/foto2.webp'); }
-    75%, 100% { background-image: url('../assets/img/foto6.webp'); }
+    0%, 20% { background-image: url('../assets/img/foto1.webp'); }
+    25%, 45% { background-image: url('../assets/img/foto2.webp'); }
+    50%, 70% { background-image: url('../assets/img/foto3.webp'); }
+    75%, 100% { background-image: url('../assets/img/foto4.webp'); }
 }
 
 .parallax-content {
