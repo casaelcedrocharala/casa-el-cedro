@@ -904,70 +904,55 @@ header {
    4. RESPONSIVE GENERAL (768px - TABLET/MÓVIL)
    ========================================== */
 @media (max-width: 768px) {
-    /* Header */
     .header-container {
-        flex-direction: row; 
-        justify-content: space-between;
-        padding: 15px 20px;
+        padding: 10px 15px;
     }
 
-    /* Menú Hamburguesa */
-    .menu-toggle {
-        display: flex !important; /* Asegura que el botón se vea */
+    /* Ocultamos el texto largo del H1 en móvil para que no empuje el menú */
+    #title {
+        font-size: 1rem;
+        max-width: 120px; /* Evita que el nombre del hotel ocupe toda la fila */
+        line-height: 1.1;
     }
 
+    .nav-logo {
+        height: 40px; /* Logo más pequeño en móvil */
+    }
+
+    /* Menú de navegación móvil (estilo desplegable) */
     .main-nav {
-        display: none !important; /* Oculto por defecto */
-        flex-direction: column;
+        display: none; /* Se activa con JS agregando una clase .active */
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: white;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        z-index: 1000;
-        padding: 10px 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 9;
     }
 
-    .main-nav.active {
-        display: flex !important; /* Se muestra con JS */
-    }
-
-    .main-nav a {
-        padding: 15px;
-        margin: 0;
-        border-bottom: 1px solid #f2f2f2;
-        text-align: center;
-        width: 100%;
-    }
-
-    /* Idiomas en móvil */
+    /* Selector de idioma en móvil */
     .lang-dropdown {
-        width: 100%;
-        text-align: center;
-        padding: 15px 0;
-        border-bottom: 1px solid #f2f2f2;
-    }
-    
-    .lang-content {
-        position: static;
-        transform: none;
-        box-shadow: none;
-        border: none;
-        background: #fafafa;
-        width: 100%;
-        display: block; /* En móvil se ven las opciones desplegadas */
+        margin-left: auto; /* Empuja el idioma hacia la derecha */
+        margin-right: 10px;
     }
 
-    /* Banner y Textos */
-    .parallax-header { height: 55vh; }
-    #hero-title { font-size: 1.8rem; padding: 0 20px; }
-    
-    /* WhatsApp en móvil pequeño */
-    @media (max-width: 480px) {
-        .whatsapp-text { display: none; }
-        .whatsapp-float { padding: 12px; border-radius: 50%; bottom: 15px; right: 15px; }
+    .lang-dropbtn img {
+        width: 24px; /* Icono de idioma más discreto */
     }
+
+    /* Botón Hamburguesa */
+    .menu-toggle {
+        display: flex;
+        order: 3; /* Asegura que quede al final a la derecha */
+    }
+}
+
+/* --- ESTADOS ACTIVOS (Para tu JS) --- */
+.main-nav.show {
+    display: flex !important;
 }
 
 /* ==========================================
