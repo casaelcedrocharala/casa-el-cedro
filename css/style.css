@@ -37,7 +37,7 @@ h2 {
     margin-bottom: 40px;
 }
 
-/* --- HEADER Y NAVEGACIÓN --- */
+/* --- HEADER Y NAVEGACIÓN ---*/
 header {
     background-color: white;
     /* 1. Aumentamos el padding arriba y abajo (de 1rem a 1.5rem o más) */
@@ -284,9 +284,8 @@ header {
     transform: rotate(-5deg) scale(1.1);
 }
 
-/* --- SERVICIOS (GRID) --- ********************************************************/
-/* --- SERVICIOS (GRID OPTIMIZADO) --- */
-/* --- SERVICIOS (ESTILO BASE / ESCRITORIO) --- */
+/* --- SERVICIOS (SERVICIOS DE LA CASA) --- ********************************************************/
+
 .servicios-grid {
     display: flex;
     justify-content: center;
@@ -320,6 +319,19 @@ header {
     color: #333;
 }
 
+.servicio-item:hover {
+    transform: translateY(-10px); /* El elemento sube 10 píxeles */
+}
+
+/* Cambiar color del texto al pasar el cursor */
+.servicio-item:hover p {
+    color: #a67c52; 
+}
+
+/* Efecto opcional en la imagen */
+.servicio-item:hover img {
+    filter: brightness(1.2); /* Hace la imagen un poco más clara */
+}
 /* --- RESPONSIVE PARA SERVICIOS --- */
 
 @media (max-width: 768px) {
@@ -345,13 +357,17 @@ header {
     .servicio-item img {
         height: 50px; /* Un poco más grandes en móvil para facilitar la vista */
     }
+
+    .servicio-item:hover {
+        transform: none; /* Desactiva el movimiento en móvil si prefieres algo más estático */
+    }
 }
 
 
-/* --- GALERÍA (FLEXIBLE) --- */
+/* --- GALERÍA NUESTRAS HABITACIONES--- ***************************************************************/
+/* Galería unificada: Usamos Grid con 3 columnas fijas en PC */
 .galeria-grid {
     display: grid;
-    /* En escritorio: 3 columnas */
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     max-width: 1200px;
@@ -361,9 +377,9 @@ header {
 
 .habitacion-card {
     position: relative;
-    height: 350px; /* Altura ideal para PC */
+    height: 350px;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 10px; /* Unifiqué a 10px que es más moderno */
     display: block;
 }
 
@@ -374,137 +390,7 @@ header {
     transition: transform 0.6s ease;
 }
 
-/* --- RESPONSIVE (MEDIA QUERIES ORDENADAS) --- */
-
-/* TABLETS (Menos de 992px) */
-@media (max-width: 992px) {
-    .galeria-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-    }
-}
-
-/* MÓVILES (Menos de 768px) */
-@media (max-width: 768px) {
-    #hero-title {
-        font-size: 1.6rem;
-        padding: 0 15px;
-    }
-
-    .galeria-grid {
-        grid-template-columns: 1fr; /* 1 columna para que las fotos luzcan */
-        gap: 15px;
-    }
-
-    .habitacion-card {
-        height: 280px; /* Bajamos la altura para que no ocupe toda la pantalla */
-    }
-
-    .servicio-item {
-        /* En móvil, los servicios pueden ir de a 2 por fila si el espacio es poco */
-        min-width: 120px;
-    }
-}
-
-/* CELULARES PEQUEÑOS (Menos de 480px) */
-@media (max-width: 480px) {
-    .servicios-grid {
-        grid-template-columns: repeat(2, 1fr); /* Forzamos 2 columnas de servicios */
-        gap: 15px;
-    }
-    
-    .room-name {
-        font-size: 1.2rem;
-    }
-}
-
-
-
-
-/* --- 3 parte --- */
-/* --- GALERIA HABITACIONES --- */
-/* Contenedor principal de la galería */
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-/* Tarjeta de habitación (el enlace) */
-.habitacion-card {
-    position: relative; /* Necesario para posicionar el texto encima */
-    display: block;
-    overflow: hidden;
-    border-radius: 10px;
-    height: 350px; /* Ajusta la altura a tu gusto */
-}
-
-.habitacion-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-/* 1. Asegura que el contenedor no deje salir nada */
-/* Contenedor del Slider */
-.slider-container {
-    position: relative;
-    width: 100%;
-    height: 700px; /* Aumentamos la altura  */
-    overflow: hidden;
-    border-radius: 0; /* Bordes totalmente rectos */
-    background-color: #000;
-}
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Animación suave al mover */
-    width: 100%;
-}
-
-/* Las imágenes dentro del slider */
-.slide {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover; /* Mantiene la proporción sin deformar */
-    border-radius: 0; /* Bordes cuadrados para la imagen también */
-    display: none;
-}
-/* Botones de navegación (estilo básico) */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.next { right: 10px; }
-.prev { left: 10px; }
-
-.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
-
-/* 3. Evita que el contenedor de la descripción se rompa */
-.room-detail-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-    overflow-x: hidden; /* Evita scroll horizontal */
-}
-
-/* 4. Ajuste para celulares */
-@media (max-width: 768px) {
-    .slider-container {
-        height: 300px; /* Altura más pequeña en móviles */
-    }
-}
-
-
-/* Capa sobre la imagen para el texto */
+/* Overlay y Texto (Solo una declaración) */
 .overlay {
     position: absolute;
     top: 0;
@@ -514,8 +400,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3); /* Oscurece un poco la foto para que se lea el texto */
-    transition: opacity 0.4s ease; /* Efecto de desvanecimiento */
+    background: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.4s ease;
 }
 
 .room-name {
@@ -524,36 +410,115 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mayor legibilidad */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* --- EFECTO HOVER (Al pasar el mouse) --- */
+/* Slider y Otros Elementos */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    background-color: #000;
+}
 
-/* El nombre y el fondo oscuro se desvanecen */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* --- 2. EFECTOS HOVER --- */
 .habitacion-card:hover .overlay {
     opacity: 0;
 }
 
-/* La imagen hace un ligero zoom */
 .habitacion-card:hover img {
     transform: scale(1.1);
 }
-.room-amenities {
-    list-style: none; /* Elimina las viñetas */
-    padding: 0;       /* Quita el espacio a la izquierda */
-    margin-top: 20px; /* Un poco de separación con el párrafo de arriba */
+
+/* --- 3. RESPONSIVE (MEDIA QUERIES ORDENADAS) --- */
+
+/* TABLETS (Menos de 992px) */
+@media (max-width: 992px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Espaciado entre cada ítem de la lista */
-.room-amenities li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    color: #444;
+/* MÓVILES (Menos de 768px) */
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .habitacion-card {
+        height: 280px;
+    }
+
+    .slider-container {
+        height: 300px;
+    }
 }
 
-/* --- 4 parte --- */
+/* CELULARES PEQUEÑOS (Menos de 480px) */
+@media (max-width: 480px) {
+    .room-name {
+        font-size: 1.2rem;
+    }
+}
 
-/* --- 1. FOOTER (Elegante y Sobrio) --- */
+
+/* TARJETAS DE PRESENTACION **********************************************************/
+.datos-tecnicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.dato-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 0px;
+    text-align: center;
+}
+
+.dato-card img {
+    margin: 0 auto 15px auto;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0; 
+}
+
+.dato-card p {
+    margin-top: 0; 
+    padding-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    /* Si quieres que todos los textos empiecen a la misma altura: */
+    flex-grow: 1; 
+}
+/* --- 2. EFECTOS HOVER --- */
+.dato-card:hover .overlay {
+    opacity: 0;
+}
+
+.dato-card:hover img {
+    transform: scale(1.1);
+}
+
+.dato-card:hover .card-title {
+    color: #a67c52;
+    transform: scale(1.05); /* Opcional: un ligero aumento de tamaño */
+    transition: all 0.3s ease;
+}
+
+
+/* ---FOOTER --- *******************************************************/
 .main-footer {
     background-color: #fafafa;
     padding: 80px 20px;

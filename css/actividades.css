@@ -31,7 +31,7 @@
     width: 100%; /* Asegura que ocupe el ancho disponible */
 }
 
-/* --- NUEVA SECCIÓN PARA MÓVILES (REEMPLAZA TU @MEDIA ACTUAL) --- */
+/* --- NUEVA SECCIÓN PARA MÓVILES (REEMPLAZA TU @MEDIA ACTUAL)--- */
 
 @media (max-width: 768px) {
 
@@ -222,6 +222,19 @@
     line-height: 1.4;
     /* Si quieres que todos los textos empiecen a la misma altura: */
     flex-grow: 1; 
+}
+.dato-card:hover .overlay {
+    opacity: 0;
+}
+
+.dato-card:hover img {
+    transform: scale(1.1);
+}
+
+.dato-card:hover .card-title {
+    color: #a67c52;
+    transform: scale(1.05); /* Opcional: un ligero aumento de tamaño */
+    transition: all 0.3s ease;
 }
 
 .btn-back { text-decoration: none; color: #27ae60; font-weight: bold; }
