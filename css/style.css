@@ -144,7 +144,7 @@ h2 {
     z-index: 2;
     text-align: center;
     padding: 20px;
-    display: flex;         /* Activamos flex para centrar */
+    display: flex;         
     flex-direction: column;
     align-items: center;    /* Centra horizontalmente */
     justify-content: center;/* Centra verticalmente */
@@ -210,7 +210,7 @@ h2 {
 
 .bar { width: 25px; height: 2px; background-color: var(--color-principal); }
 
-/* --- RESPONSIVE MÓVIL (UNIFICADO) --- */
+/* --- RESPONSIVE MÓVIL  --- */
 @media (max-width: 768px) {
     
     header {
@@ -275,7 +275,7 @@ h2 {
     }
 }
 
-/* --- SERVICIOS (SERVICIOS DE LA CASA) --- ********************************************************/
+/* --- SERVICIOS (SERVICIOS DE LA CASA) --- ****************************************************************/
 
 .servicios-grid {
     display: flex;
@@ -355,8 +355,100 @@ h2 {
 }
 
 
-/* --- GALERÍA NUESTRAS HABITACIONES--- ***************************************************************/
-/* Galería unificada: Usamos Grid con 3 columnas fijas en PC */
+/* --- SECCIÓN DETALLE DE HABITACIÓN (ROOM INFO) --- ************************************************************/
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.room-header {
+    text-align: center;      /* Centra todo el contenido */
+    padding: 60px 20px 20px; /* Espacio arriba y a los lados */
+    max-width: 1200px;
+    margin: 0 auto;          /* Centra el bloque en la web */
+}
+
+.room-info {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+.room-info h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.description p {
+    margin-bottom: 20px;
+    padding: 0 10px; /* Evita que el texto toque los bordes en móvil */
+    color: #555;
+    text-align: justify; /* Opcional: para un look más limpio */
+}
+
+.tagline {
+    font-family: var(--fuente-cuerpo);
+    font-size: 1.2rem;
+    color: var(--color-acento); /* Color dorado/café para que resalte */
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 30px; /* Centra el párrafo y da espacio al slider */
+}
+
+#room-price-from {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.description {
+    flex: 2;
+    text-align: left;
+}
+
+.room-amenities {
+    list-style: none;
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+/* Tarjeta de Reserva */
+.booking-card {
+    flex: 1;
+    background: #ffffff;
+    padding: 35px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    text-align: center;
+    position: sticky;
+    top: 100px; /* Se queda fija al hacer scroll en PC */
+}
+
+.booking-card h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.6rem;
+    color: var(--color-principal);
+    margin-bottom: 5px;
+}
+
+.btn-sobrio {
+    display: inline-block;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+    width: 100%; /* Botón ancho completo en la tarjeta */
+}
+
+/* --- GALERÍA NUESTRAS HABITACIONES --- */
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -370,7 +462,7 @@ h2 {
     position: relative;
     height: 350px;
     overflow: hidden;
-    border-radius: 10px; /* Unifiqué a 10px que es más moderno */
+    border-radius: 10px;
     display: block;
 }
 
@@ -381,13 +473,9 @@ h2 {
     transition: transform 0.6s ease;
 }
 
-/* Overlay y Texto (Solo una declaración) */
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -402,66 +490,122 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
-/* Slider y Otros Elementos */
 .slider-container {
     position: relative;
     width: 100%;
-    height: 700px;
+    max-width: 1100px; /* Para que no se vea gigante en pantallas 4K */
+    height: 600px;
+    margin: 0 auto 50px;
     overflow: hidden;
-    background-color: #000;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+/* Sombra interna para que el slider tenga profundidad */
+.slider-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.4));
+    pointer-events: none;
+}
+
+.slider img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la imagen se estire */
 }
 
-/* --- 2. EFECTOS HOVER --- */
-.habitacion-card:hover .overlay {
-    opacity: 0;
+/* Botones del Slider */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: 0.3s;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.habitacion-card:hover img {
-    transform: scale(1.1);
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover {
+    background-color: white;
+    color: var(--color-acento);
 }
 
-/* --- 3. RESPONSIVE (MEDIA QUERIES ORDENADAS) --- */
 
-/* TABLETS (Menos de 992px) */
+
+/* --- EFECTOS HOVER --- */
+.habitacion-card:hover .overlay { opacity: 0; }
+.habitacion-card:hover img { transform: scale(1.1); }
+
+/* --- RESPONSIVE UNIFICADO --- */
+
 @media (max-width: 992px) {
-    .galeria-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+    .room-info { gap: 30px; }
 }
 
-/* MÓVILES (Menos de 768px) */
 @media (max-width: 768px) {
+    /* Ajustes Room Info */
+    .room-info {
+        flex-direction: column;
+        margin: 40px auto;
+    }
+
+    .description {
+        text-align: center;
+        order: 1;
+    }
+
+    .booking-card {
+        width: 100%;
+        position: static; /* Ya no es sticky en móvil */
+        order: 2;
+        padding: 25px;
+    }
+
+    .room-amenities {
+        grid-template-columns: 1fr;
+        text-align: left;
+        display: inline-block;
+    }
+
+    /* Ajustes Galería */
     .galeria-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-    .habitacion-card {
-        height: 280px;
+    .habitacion-card { height: 280px; }
     }
-
     .slider-container {
-        height: 300px;
+        height: 350px; /* Más bajo en móvil */
+        border-radius: 0; /* Pantalla completa en móvil */
     }
-}
+    .prev, .next { padding: 10px 15px; font-size: 16px; }
 
-/* CELULARES PEQUEÑOS (Menos de 480px) */
 @media (max-width: 480px) {
-    .room-name {
-        font-size: 1.2rem;
-    }
+    .room-name { font-size: 1.2rem; }
+    #hero-title { font-size: 1.8rem; }
 }
 
 
-/* TARJETAS DE PRESENTACION **********************************************************/
+
+
+/* TARJETAS DE PRESENTACION *****************************************************************************************/
 .datos-tecnicos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -509,8 +653,8 @@ h2 {
 }
 
 
-/* ---FOOTER --- *******************************************************/
-/* --- FOOTER UNIFICADO (Mismos márgenes que el Header) --- */
+/* ---FOOTER --- ****************************************************************************************************/
+
 .main-footer {
     width: 100%;
     background-color: #fafafa;
@@ -626,24 +770,40 @@ h2 {
 /* --- RESPONSIVE MÓVIL (IPHONE/ANDROID) --- */
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: column; /* Apila en móvil */
+        display: flex;          /* Cambiamos de grid a flex */
+        flex-direction: column; /* Apilamos verticalmente */
+        align-items: center;    /* Centra los bloques horizontalmente */
         text-align: center !important;
-        gap: 40px;
+        gap: 30px;
         padding: 0 5%;
     }
 
-    .footer-section {
+    /* Forzamos que cada sección ocupe el 100% y su contenido se centre */
+    .footer-section, .footer-section * {
         text-align: center !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Si usas listas (ul) en el footer, hay que quitarle el padding por defecto */
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
     }
 
     .social-links {
-        justify-content: center;
+        display: flex;
+        justify-content: center; /* Centra los iconos de redes sociales */
+        width: 100%;
     }
 
     .footer-copy {
+        display: flex;
         flex-direction: column;
         gap: 10px;
         text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #eee; /* Línea divisoria opcional */
     }
 }
 
@@ -1037,24 +1197,6 @@ h2 {
 
     .habitacion-card {
         height: 280px;
-    }
-}
-
-/* ==========================================
-   6. RESPONSIVE DETALLE HABITACIONES (850px)
-   ========================================== */
-@media (max-width: 850px) {
-    .room-info {
-        grid-template-columns: 1fr; 
-        gap: 30px;
-    }
-
-    .slider-container {
-        height: 320px;
-    }
-
-    .room-header h1 {
-        font-size: 1.8rem;
     }
 }
 
