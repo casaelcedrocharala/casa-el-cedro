@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. EJECUTAR MAPA
     const mapContainer = document.getElementById('map');
     if (mapContainer && typeof L !== 'undefined') {
-        var map = L.map('map').setView([6.23072, -73.17116], 12); 
+        var map = L.map('map').setView([6.23072, -73.17116], 8); 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; OpenStreetMap'
