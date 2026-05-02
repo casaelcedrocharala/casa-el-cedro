@@ -23,7 +23,7 @@ body {
     width: 100%;
 }
 
-/* --- HEADER 100% ANCHO --- */
+/* --- HEADER --- */
 header {
     background-color: white;
     padding: 1rem 0; 
@@ -37,23 +37,40 @@ header {
     width: 100%;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between; /* Distribuye: Izquierda | Centro | Derecha */
-    align-items: center;
-    width: 100%;
-    max-width: none; /* Eliminamos el límite para usar toda la pantalla */
-    padding: 0 4%;   /* Aire lateral proporcional */
+h2 {
+    width: 100%;            
+    font-size: 2.5rem;
+    font-family: var(--fuente-titulos);
+    color: var(--color-principal);
+    margin-bottom: 40px;
+    text-align: center !important; /* El !important asegura que nada lo mueva */
+    display: block;
 }
 
-/* Área Logo (Izquierda) */
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 4%;
+}
+
 .logo-area {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    flex: 1; /* Ocupa espacio para empujar el resto */
+    flex: 1;
 }
+
+.nav-logo {
+    width: 45px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover { transform: rotate(-5deg) scale(1.1); }
 
 #title {
     font-family: var(--fuente-titulos);
@@ -65,15 +82,12 @@ header {
     white-space: nowrap;
 }
 
-.nav-logo { width: 45px; height: auto; }
-
-/* Navegación (Centro) */
 .main-nav {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    flex: 2; /* Mayor peso visual al centro */
+    flex: 2;
 }
 
 .main-nav a {
@@ -84,7 +98,6 @@ header {
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
-    white-space: nowrap;
 }
 
 .main-nav a:hover, .main-nav a.active { color: var(--color-acento); }
@@ -99,11 +112,10 @@ header {
     background-color: var(--color-acento);
 }
 
-/* Idiomas (Derecha) */
 .lang-dropdown {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Empuja a la derecha total */
+    justify-content: flex-end;
 }
 
 .lang-dropbtn {
@@ -115,63 +127,9 @@ header {
     gap: 5px;
     font-family: var(--fuente-moderna);
     font-weight: 600;
-    font-size: 0.85rem;
 }
 
-/* --- FOOTER 100% ANCHO --- */
-.main-footer {
-    width: 100%;
-    background-color: #fafafa;
-    padding: 60px 0 30px;
-    border-top: 1px solid #eee;
-    color: #444;
-}
-
-.footer-container {
-    width: 100%;
-    padding: 0 4%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    text-align: center;
-}
-
-.footer-logo {
-    font-family: var(--fuente-titulos) !important;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    color: var(--color-principal);
-    margin-bottom: 15px;
-}
-
-/* --- RESPONSIVE IPHONE / MÓVIL --- */
-@media (max-width: 992px) {
-    .main-nav { display: none; } /* Ocultar menú central */
-    
-    #title { font-size: 1.1rem; }
-    
-    .header-container { padding: 0 5%; }
-}
-
-@media (max-width: 768px) {
-    .main-nav.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 20px 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    
-    .lang-dropdown { display: none; } 
-}
-
-/* --- BANNER PRINCIPAL (PARALLAX) --- */
+/* --- BANNER PRINCIPAL --- */
 .parallax-header {
     position: relative;
     height: 85vh; 
@@ -180,6 +138,19 @@ header {
     justify-content: center;
     background: #000;
 }
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    display: flex;         /* Activamos flex para centrar */
+    flex-direction: column;
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center;/* Centra verticalmente */
+    gap: 10px;             /* Espacio entre logo y texto */
+}
+
 
 .slider-background {
     position: absolute;
@@ -199,40 +170,32 @@ header {
     75%, 100% { background-image: url('../assets/img/foto4.webp'); }
 }
 
-.parallax-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
+.hero-logo {
+    width: 100px;          /* Tamaño reducido para que no se vea gigante */
+    height: auto;
+    opacity: 0;          /* Semitransparente */
+    filter: brightness(0) invert(1); 
+    animation: fadeInHero 1.5s ease-out forwards 0.3s;
 }
 
-.hero-logo { width: 150px; margin-bottom: 20px; filter: brightness(0) invert(1); }
-
-.parallax-content h2 {
-    color: white;
+#hero-title {
     font-family: var(--fuente-titulos);
-    font-size: 3rem;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    font-size: 2.8rem;
+    color: rgba(255, 255, 255, 0.8); /* Blanco semitransparente */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;            /* Empieza invisible para la animación */
+    animation: fadeInHero 1.5s ease-out forwards 0.6s;
 }
 
-section {
-    width: 100%;           
-    max-width: 1100px;      
-    margin: 80px auto;      
-    padding: 0 20px;
-    text-align: center;     
-    display: block;         
+@keyframes fadeInHero {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 0.7; transform: translateY(0); }
 }
-
-h2 {
-    width: 100%;            
-    font-size: 2.5rem;
-    font-family: var(--fuente-titulos);
-    color: var(--color-principal);
-    margin-bottom: 40px;
-    text-align: center;     
-}
-
 
 /* --- BOTÓN HAMBURGUESA --- */
 .menu-toggle {
@@ -243,95 +206,73 @@ h2 {
     background: none;
     border: none;
     z-index: 2100;
-    padding: 10px;
 }
 
-.bar {
-    width: 25px;
-    height: 2px;
-    background-color: var(--color-principal);
-    transition: 0.3s;
-}
+.bar { width: 25px; height: 2px; background-color: var(--color-principal); }
 
-/* --- MEDIA QUERY PARA MÓVILES (768px o menos) --- */
+/* --- RESPONSIVE MÓVIL (UNIFICADO) --- */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* ¡Aquí vuelve a aparecer! */
-        order: 3;      /* Lo posiciona a la derecha */
+    
+    header {
+        height: auto;
+        padding: 10px 0; /* Un poco más de aire arriba y abajo */
     }
 
-    .lang-dropdown {
-        order: 2;      /* Idioma queda al lado de la hamburguesa */
-        flex: 0;       /* Ya no necesita expandirse */
-        margin-right: 10px;
-    }
+    .menu-toggle { display: flex; order: 3; }
+    
+    .lang-dropdown { order: 2; margin-right: 15px; }
 
     .logo-area {
-        flex: 1;
-        order: 1;      /* Logo siempre a la izquierda */
+        gap: 8px; /* Reduce el espacio entre el logo imagen y el texto */
     }
 
+    #title {
+        font-size: 0.85rem; /* Ajuste sutil */
+        line-height: 1.1;    /* Reduce el espacio entre los dos renglones */
+        white-space: normal; /* Permite que el texto salte de línea */
+        display: flex;
+        flex-direction: column; /* Alinea los renglones uno sobre otro */
+        justify-content: center;
+    }
+    #title span {
+        display: none; /* Opcional: quita la "|" para que se vea más limpio en dos líneas */
+    }
     .main-nav {
-        display: none; /* Escondido por defecto */
-        flex-direction: column;
+        display: none; 
         position: absolute;
-        top: 100%;     /* Justo debajo del header */
+        top: 100%; 
         left: 0;
         width: 100%;
+        flex-direction: column;
         background: white;
-        padding: 20px 0;
+        padding: 1rem 0;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         z-index: 2000;
     }
 
-    .main-nav.active {
-        display: flex; /* Se muestra al hacer clic */
+    .main-nav.active { display: flex; }
+
+    .main-nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        border-bottom: 1px solid #f2f2f2;
     }
-}
 
-/*2 parte*/
-/* --- ANIMACIONES --- */
-@keyframes fadeInHero {
-    from { opacity: 0; transform: scale(0.95) translateY(10px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
-}
+    .main-nav a.active::after { display: none; }
 
-/* --- LOGO DEL BANNER (HERO) --- */
-.hero-logo {
-    width: 220px;
-    height: auto;
-    margin-bottom: 20px;
-    opacity: 0; 
-    animation: fadeInHero 1.5s ease-out forwards;
-    animation-delay: 0.3s;
-    filter: brightness(0) invert(1); /* Asegura que sea blanco */
-}
+    /* Fix para iOS y performance móvil */
+    .slider-background { 
+        background-attachment: scroll;
+        }
 
-/* --- TÍTULO DEL BANNER --- */
-#hero-title {
-    font-family: var(--fuente-titulos) !important;
-    font-size: 2.8rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px; 
-    font-weight: bold;
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
-    max-width: 850px;
-    margin: 0 auto;
-    opacity: 0;
-    animation: fadeInHero 1.5s ease-out forwards;
-    animation-delay: 0.6s;
-}
-
-/* --- LOGO DEL MENÚ (NAV) --- */
-.nav-logo {
-    width: 45px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.nav-logo:hover {
-    transform: rotate(-5deg) scale(1.1);
+    #hero-title {
+        font-size: 1.6rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .hero-logo {
+        width: 100px; /* Más pequeño en móviles */
+    }
 }
 
 /* --- SERVICIOS (SERVICIOS DE LA CASA) --- ********************************************************/
