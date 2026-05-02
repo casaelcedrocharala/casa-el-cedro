@@ -895,10 +895,7 @@ h2 {
 }
 
 /*5 parte---------------------------------------------------------------------------------------/
-/* Ajustes para Tablets y Celulares (Menos de 768px) */
-/* --- 1. ESTILOS DE IDIOMA (Escritorio y General) --- */
-/* ==========================================
-   1. IDIOMAS (ESCRITORIO)
+
    ========================================== */
 /* --- POSICIONAMIENTO DEL IDIOMA --- */
 .lang-dropdown {
@@ -926,17 +923,13 @@ h2 {
 .lang-content {
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;         /* Alinea el menú con el borde derecho del botón */
-    left: auto;       /* Cancela el centrado anterior */
-    transform: none;  /* Eliminamos el translateX para evitar saltos */
-    background-color: white;
+    top: 100%;        /* Empieza justo donde termina el botón */
+    right: 0;
+    left: auto;
+    background-color: #FDFBF7E6;
+    padding-top: 10px;            /* Este es el espacio que querías (el aire) */
     min-width: 140px;
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
-    border-radius: 8px; /* Bordes más suaves y modernos */
-    border: 1px solid #eee;
-    overflow: hidden;
-    margin-top: 10px; /* Espacio entre el botón y el menú */
+    z-index: 3000;
 }
 
 /* Efecto Hover */
@@ -953,6 +946,19 @@ h2 {
     text-align: center;
     font-size: 0.85rem;
     transition: 0.3s;
+}
+/* Creamos el contenedor interno con el estilo visual */
+.lang-content-inner {
+    background-color: white;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+/* Efecto Hover: Ahora el ratón pasa por el padding sin problemas */
+.lang-dropdown:hover .lang-content {
+    display: block;
 }
 
 .lang-content a:hover {
