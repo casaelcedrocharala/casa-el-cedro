@@ -1189,17 +1189,18 @@ img, video, canvas, svg {
     }
 }
 
-
-   ========================================== */
 /* --- POSICIONAMIENTO DEL IDIOMA --- ********************************************************************/
+
+/* 1. POSICIONAMIENTO (Derecha de la pantalla) */
 .lang-dropdown {
-    flex: 1;                /* Toma espacio para equilibrar el logo */
-    display: flex;          /* Permite usar justify-content */
-    justify-content: flex-end; /* ¡ESTO lo empuja a la derecha total! */
+    flex: 1;                /* Toma el espacio para empujar */
+    display: flex;          /* Activamos flex para alinear */
+    justify-content: flex-end; /* ¡Esto lo manda a la derecha! */
     position: relative;
     z-index: 1100;
 }
 
+/* 2. EL BOTÓN */
 .lang-dropbtn {
     background: none;
     border: none;
@@ -1207,42 +1208,50 @@ img, video, canvas, svg {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-family: var(--fuente-moderna);
-    font-size: 0.9rem; /* Un poco más grande para legibilidad */
+    padding: 10px; 
+    font-family: inherit;
     font-weight: 600;
-    padding: 10px;    /* Más área de clic */
 }
 
-/* --- MENÚ DESPLEGABLE --- */
+/* 3. EL MENÚ (Ajustado para que no se escape) */
 .lang-content {
     display: none;
     position: absolute;
-    top: 100%;        /* Empieza justo donde termina el botón */
+    top: 100%;        /* Pegado al botón para evitar el hueco */
     right: 0;
-    left: auto;
-    background-color: #FDFBF7E6;
-    padding-top: 10px;            /* Este es el espacio que querías (el aire) */
     min-width: 140px;
     z-index: 3000;
+    
+    /* DISEÑO VISUAL */
+    background-color: white; 
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    
+    /* El "aire" lo damos con un margen interno superior */
+    padding-top: 5px; 
 }
 
+/* EL PUENTE (Garantiza que el mouse nunca salga del área) */
 .lang-content::before {
     content: "";
     position: absolute;
-    top: -10px; /* Debe coincidir con el espacio que quieres dejar */
+    top: -15px;       /* Sube 15px para solapar con el botón */
     left: 0;
     right: 0;
-    height: 10px;
+    height: 15px;     /* Crea un área de contacto invisible */
     background: transparent;
 }
-/* Efecto Hover */
+
+/* 4. HOVER (Estado activo) */
 .lang-dropdown:hover .lang-content {
     display: block;
 }
 
-
+/* 5. ENLACES */
 .lang-content a {
-    color: var(--color-texto);
+    color: #333;
     padding: 12px 15px;
     text-decoration: none;
     display: block;
@@ -1250,24 +1259,12 @@ img, video, canvas, svg {
     font-size: 0.85rem;
     transition: 0.3s;
 }
-/* Creamos el contenedor interno con el estilo visual */
-.lang-content-inner {
-    background-color: white;
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
-    border-radius: 8px;
-    border: 1px solid #eee;
-    overflow: hidden;
-}
-
-/* Efecto Hover: Ahora el ratón pasa por el padding sin problemas */
-.lang-dropdown:hover .lang-content {
-    display: block;
-}
 
 .lang-content a:hover {
     background-color: #f9f9f9;
-    color: var(--color-acento);
+    color: #000; /* O tu color de acento */
 }
+
 
 /* ==========================================
    2. PÁGINA DE CONSTRUCCIÓN (RESET)
