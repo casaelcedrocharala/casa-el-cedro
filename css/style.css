@@ -74,7 +74,7 @@ h2 {
 
 #title {
     font-family: var(--fuente-titulos);
-    font-size: 1 rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--color-principal);
