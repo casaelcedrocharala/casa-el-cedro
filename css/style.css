@@ -1226,6 +1226,15 @@ img, video, canvas, svg {
     z-index: 3000;
 }
 
+.lang-content::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Debe coincidir con el espacio que quieres dejar */
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+}
 /* Efecto Hover */
 .lang-dropdown:hover .lang-content {
     display: block;
