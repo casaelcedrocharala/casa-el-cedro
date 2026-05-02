@@ -517,6 +517,11 @@ img, video, canvas, svg {
     height: 100%;
     object-fit: cover; /* Evita que la imagen se estire */
 }
+.slide {
+    background-color: transparent !important; /* Quita cualquier fondo gris residual */
+    border: none !important;                  /* Asegura que no haya bordes grises */
+    outline: none !important;
+}
 
 /* Botones del Slider */
 .prev, .next {
