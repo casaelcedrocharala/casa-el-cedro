@@ -79,4 +79,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+const modal = document.getElementById("modal-legal");
+const btnOk = document.getElementById("modal-ok");
+const btnClose = document.querySelector(".close-modal");
+
+function openLegal(tipo) {
+    const title = document.getElementById("modal-title");
+    const body = document.getElementById("modal-body");
+
+    if (tipo === 'privacidad') {
+        title.innerText = "Política de Privacidad";
+        body.innerHTML = "<p>En Casa El Cedro protegemos tus datos... (tu texto aquí)</p>";
+    } else {
+        title.innerText = "Términos y Condiciones";
+        body.innerHTML = "<p>Al reservar con nosotros aceptas... (tu texto aquí)</p>";
+    }
+    modal.style.display = "block";
+}
+
+// Cerrar al dar OK, en la X o fuera de la ventana
+btnOk.onclick = () => modal.style.display = "none";
+btnClose.onclick = () => modal.style.display = "none";
+window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; }
+
 

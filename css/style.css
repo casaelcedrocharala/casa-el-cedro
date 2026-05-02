@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Montserrat&family=Plus+Jakarta+Sans');
 
 :root {
@@ -11,6 +10,7 @@
     --color-texto: #333333;
 }
 
+/* --- RESET TOTAL --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -20,146 +20,156 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    width: 100%;
 }
 
-/* --- SECCIONES Y TÍTULOS --- */
-section {
-    max-width: 1100px;
-    margin: 80px auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 2.5rem;
-    font-family: var(--fuente-titulos);
-    color: var(--color-principal);
-    margin-bottom: 40px;
-}
-
-/* --- HEADER Y NAVEGACIÓN ---*/
+/* --- HEADER 100% ANCHO --- */
 header {
     background-color: white;
-    /* 1. Aumentamos el padding arriba y abajo (de 1rem a 1.5rem o más) */
-    padding: 1.5rem 2rem; 
+    padding: 1rem 0; 
     border-bottom: 1px solid #f2f2f2;
     position: sticky;
     top: 0;
     z-index: 2000;
-    
-    /* 2. Añadimos un margen inferior para que respire antes del banner */
-    margin-bottom: 10px; 
-    
-    /* 3. Aseguramos una altura mínima controlada si usas variables */
-    min-height: 90px; 
+    min-height: 80px; 
     display: flex;
     align-items: center;
-}
-
-/* También ajustamos el contenedor interno para que el logo y menú no se peguen a los bordes */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1250px; /* Un poco más ancho para elegancia */
-    margin: 0 auto;
     width: 100%;
 }
 
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye: Izquierda | Centro | Derecha */
+    align-items: center;
+    width: 100%;
+    max-width: none; /* Eliminamos el límite para usar toda la pantalla */
+    padding: 0 4%;   /* Aire lateral proporcional */
+}
+
+/* Área Logo (Izquierda) */
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 10px;
-    z-index: 2001;
+    gap: 12px;
+    text-decoration: none;
+    flex: 1; /* Ocupa espacio para empujar el resto */
 }
 
-.nav-logo { width: 40px; height: auto; }
-
-#title, 
-.footer-logo {
-    font-family: var(--fuente-titulos) !important; /* Forza el uso de Cormorant Garamond */
-    text-transform: uppercase;         /* Mayúsculas elegantes */
-    letter-spacing: 1px;               /* Espaciado de lujo */
-    font-weight: 700;                  /* Grosor de marca */
-    color: var(--color-principal);     /* Color oscuro #1a1a1a */
-    margin: 0;
-    line-height: 1;
-}
-
-/* Ajuste específico para el tamaño en el Header */
 #title {
-    font-size: 1.4rem; /* Un poco más pequeño que el footer para que quepa en el menú */
+    font-family: var(--fuente-titulos);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-principal);
+    font-weight: 700;
+    white-space: nowrap;
 }
 
-/* Ajuste específico para el tamaño en el Footer */
-.footer-logo {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
+.nav-logo { width: 45px; height: auto; }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-.bar {
-    width: 25px;
-    height: 2px;
-    background-color: var(--color-principal);
-    transition: 0.3s;
-}
-
-/* Menú modo escritorio */
+/* Navegación (Centro) */
 .main-nav {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex: 2; /* Mayor peso visual al centro */
 }
 
-
-/* Efecto cuando pasas el ratón (Hover) */
-.main-nav a:hover { color: var(--color-acento); }
-
-/* Estilo base para los enlaces del menú */
 .main-nav a {
     text-decoration: none;
-    color: #333; /* Color de texto normal */
-    padding: 10px 15px;
-    margin: 0 5px;
-    transition: all 0.3s ease; /* Para que el cambio de color sea suave */
-    display: inline-block;
-    position: relative; /* Necesario para el efecto de la línea inferior */
+    color: #444;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
 }
 
-/* Efecto cuando pasas el ratón (Hover) */
+.main-nav a:hover, .main-nav a.active { color: var(--color-acento); }
 
-
-/* Estilo para la CLASE ACTIVE (La página donde estás) */
-.main-nav a.active {
-    color: var(--color-acento); /* Color destacado */
-    font-weight: bold; /* Texto en negrita para resaltar */
-}
-
-/* Opcional: Una línea debajo del enlace activo */
 .main-nav a.active::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 15px;
-    right: 15px;
-    height: 1px;
+    bottom: -5px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
     background-color: var(--color-acento);
-    border-radius: 1px;
 }
 
+/* Idiomas (Derecha) */
+.lang-dropdown {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Empuja a la derecha total */
+}
 
+.lang-dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--fuente-moderna);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
 
-/* Idiomas */
-.lang-dropdown { margin-left: 20px; }
-.lang-dropbtn { background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+/* --- FOOTER 100% ANCHO --- */
+.main-footer {
+    width: 100%;
+    background-color: #fafafa;
+    padding: 60px 0 30px;
+    border-top: 1px solid #eee;
+    color: #444;
+}
+
+.footer-container {
+    width: 100%;
+    padding: 0 4%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: var(--fuente-titulos) !important;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--color-principal);
+    margin-bottom: 15px;
+}
+
+/* --- RESPONSIVE IPHONE / MÓVIL --- */
+@media (max-width: 992px) {
+    .main-nav { display: none; } /* Ocultar menú central */
+    
+    #title { font-size: 1.1rem; }
+    
+    .header-container { padding: 0 5%; }
+}
+
+@media (max-width: 768px) {
+    .main-nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .lang-dropdown { display: none; } 
+}
 
 /* --- BANNER PRINCIPAL (PARALLAX) --- */
 .parallax-header {
@@ -178,7 +188,7 @@ header {
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
-    opacity: 0.7; /* Para que el texto se lea mejor */
+    opacity: 0.7; 
     animation: sliderAnim 24s infinite;
 }
 
@@ -205,39 +215,79 @@ header {
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-/* --- RESPONSIVE (CELULARES) --- */
+section {
+    width: 100%;           
+    max-width: 1100px;      
+    margin: 80px auto;      
+    padding: 0 20px;
+    text-align: center;     
+    display: block;         
+}
+
+h2 {
+    width: 100%;            
+    font-size: 2.5rem;
+    font-family: var(--fuente-titulos);
+    color: var(--color-principal);
+    margin-bottom: 40px;
+    text-align: center;     
+}
+
+
+/* --- BOTÓN HAMBURGUESA --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 2100;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-principal);
+    transition: 0.3s;
+}
+
+/* --- MEDIA QUERY PARA MÓVILES (768px o menos) --- */
 @media (max-width: 768px) {
-    h2 { font-size: 1.8rem; }
+    .menu-toggle {
+        display: flex; /* ¡Aquí vuelve a aparecer! */
+        order: 3;      /* Lo posiciona a la derecha */
+    }
 
-    .menu-toggle { display: flex; }
+    .lang-dropdown {
+        order: 2;      /* Idioma queda al lado de la hamburguesa */
+        flex: 0;       /* Ya no necesita expandirse */
+        margin-right: 10px;
+    }
 
-    /* Menú colapsado */
+    .logo-area {
+        flex: 1;
+        order: 1;      /* Logo siempre a la izquierda */
+    }
+
     .main-nav {
-        display: none; 
+        display: none; /* Escondido por defecto */
         flex-direction: column;
         position: absolute;
-        top: var(--header-height);
+        top: 100%;     /* Justo debajo del header */
         left: 0;
         width: 100%;
         background: white;
         padding: 20px 0;
-        border-bottom: 2px solid var(--color-acento);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 2000;
     }
 
-    .main-nav.active { display: flex; }
-
-    .main-nav a {
-        margin: 10px 0;
-        width: 100%;
-        text-align: center;
-        font-size: 1rem;
+    .main-nav.active {
+        display: flex; /* Se muestra al hacer clic */
     }
-
-    .parallax-content h2 { font-size: 1.8rem; }
-    
-    .lang-dropdown { display: none; } /* Opcional: ocultar idiomas o moverlos al nav */
 }
-
 
 /*2 parte*/
 /* --- ANIMACIONES --- */
@@ -259,11 +309,11 @@ header {
 
 /* --- TÍTULO DEL BANNER --- */
 #hero-title {
-    font-family: var(--fuente-titulos) !important; /* Forzamos la fuente de marca */
+    font-family: var(--fuente-titulos) !important;
     font-size: 2.8rem;
     color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 2px; /* Ajusta según el estilo del footer */
+    letter-spacing: 2px; 
     font-weight: bold;
     text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
     max-width: 850px;
@@ -519,39 +569,145 @@ header {
 
 
 /* ---FOOTER --- *******************************************************/
+/* --- FOOTER UNIFICADO (Mismos márgenes que el Header) --- */
 .main-footer {
+    width: 100%;
     background-color: #fafafa;
-    padding: 80px 20px;
-    text-align: center;
+    padding: 60px 0 20px;
     border-top: 1px solid #eee;
+    color: var(--color-texto);
+    display: block;
 }
 
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye igual que el header */
+    align-items: flex-start;        /* Alinea el contenido arriba */
+    width: 100%;
+    max-width: none;               /* Sin límites, igual que el header */
+    padding: 0 4%;                 /* EL MISMO MARGEN QUE EL HEADER */
+    margin: 0;
+}
+
+/* Ajuste de columnas para que se distribuyan bien en el 100% */
+.footer-section {
+    flex: 1;
+    text-align: left; /* Alineación elegante a la izquierda */
+}
+
+/* Centramos la columna del medio para equilibrio visual */
+.footer-section:nth-child(2) {
+    text-align: center;
+}
+
+/* Alineamos la última columna a la derecha */
+.footer-section:nth-child(3) {
+    text-align: right;
+}
+
+/* Tipografía y estilos */
 .footer-logo {
-    font-family: var(--fuente-titulos);
-    font-size: 1.8rem;
-    letter-spacing: 4px;
+    font-family: var(--fuente-titulos) !important;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+}
+
+.rnt-number {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+.footer-section h4 {
+    font-family: var(--fuente-moderna);
+    font-size: 0.9rem;
     text-transform: uppercase;
     margin-bottom: 20px;
-    color: var(--color-principal);
-}
-
-.footer-links {
-    margin-bottom: 30px;
-}
-
-.footer-links a {
-    text-decoration: none;
     color: var(--color-acento);
-    margin: 0 15px;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: var(--color-principal);
+.footer-section p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
 }
+
+/* Redes Sociales (Alineadas a la derecha por la regla nth-child) */
+.social-links {
+    display: flex;
+    justify-content: flex-end; /* Empuja iconos a la derecha */
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* Copyright con el mismo margen */
+.footer-copy {
+    width: 100%;
+    margin-top: 50px;
+    padding: 20px 4% 0; /* Margen del 4% */
+    border-top: 1px solid #ddd;
+    font-size: 0.8rem;
+    color: #888;
+    display: flex;
+    justify-content: space-between; /* Texto izquierda, links derecha */
+}
+
+.footer-copy a {
+    color: #888;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+/* --- RESPONSIVE MÓVIL (IPHONE/ANDROID) --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Apila en móvil */
+        text-align: center !important;
+        gap: 40px;
+        padding: 0 5%;
+    }
+
+    .footer-section {
+        text-align: center !important;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-copy {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+
+
 
 /* --- 2. CONTACTO (Grid Moderno) --- */
 .contact-container {
@@ -730,11 +886,6 @@ header {
 @media (max-width: 768px) {
     .contact-container { grid-template-columns: 1fr; gap: 40px; }
     
-    .footer-links a {
-        display: block;
-        margin: 15px 0;
-    }
-
     #map { height: 350px; }
 
     .about-banner {
@@ -749,9 +900,12 @@ header {
 /* ==========================================
    1. IDIOMAS (ESCRITORIO)
    ========================================== */
+/* --- POSICIONAMIENTO DEL IDIOMA --- */
 .lang-dropdown {
+    flex: 1;                /* Toma espacio para equilibrar el logo */
+    display: flex;          /* Permite usar justify-content */
+    justify-content: flex-end; /* ¡ESTO lo empuja a la derecha total! */
     position: relative;
-    display: inline-block;
     z-index: 1100;
 }
 
@@ -763,28 +917,33 @@ header {
     align-items: center;
     gap: 8px;
     font-family: var(--fuente-moderna);
-    font-size: 0.8rem;
+    font-size: 0.9rem; /* Un poco más grande para legibilidad */
     font-weight: 600;
-    padding: 5px;
+    padding: 10px;    /* Más área de clic */
 }
 
+/* --- MENÚ DESPLEGABLE --- */
 .lang-content {
     display: none;
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;         /* Alinea el menú con el borde derecho del botón */
+    left: auto;       /* Cancela el centrado anterior */
+    transform: none;  /* Eliminamos el translateX para evitar saltos */
     background-color: white;
     min-width: 140px;
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
-    border-radius: 4px;
-    border: 1px solid #f2f2f2;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    border-radius: 8px; /* Bordes más suaves y modernos */
+    border: 1px solid #eee;
     overflow: hidden;
+    margin-top: 10px; /* Espacio entre el botón y el menú */
 }
 
+/* Efecto Hover */
 .lang-dropdown:hover .lang-content {
     display: block;
 }
+
 
 .lang-content a {
     color: var(--color-texto);
@@ -908,14 +1067,9 @@ header {
         width: 24px; /* Icono de idioma más discreto */
     }
 
-    /* Botón Hamburguesa */
-    .menu-toggle {
-        display: flex;
-        order: 3; /* Asegura que quede al final a la derecha */
-    }
+
 }
 
-/* --- ESTADOS ACTIVOS (Para tu JS) --- */
 .main-nav.show {
     display: flex !important;
 }
@@ -1128,3 +1282,50 @@ header {
         letter-spacing: 1px;
     }
 }
+
+/* --- ESTILOS DE LA MODAL --- */
+.modal {
+    display: none; /* Oculta por defecto */
+    position: fixed;
+    z-index: 3000; /* Por encima del header */
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Fondo oscuro */
+    backdrop-filter: blur(5px); /* Efecto desenfoque moderno */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto; /* Scroll si el texto es largo */
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px; top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+}
+
+.modal-ok-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 30px;
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Ajuste para que los links del footer activen la modal */
+.footer-copy a { cursor: pointer; }
