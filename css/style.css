@@ -596,6 +596,14 @@ img, video, canvas, svg {
 
     .habitacion-card { height: 280px; }
     }
+
+    .habitacion-card img, .slide {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;    /* Llena el espacio cortando lo sobrante */
+        object-position: center; 
+        display: block;       /* Elimina el espacio extra debajo de las imágenes inline */
+    }
     .slider-container {
         height: 350px; /* Más bajo en móvil */
         border-radius: 0; /* Pantalla completa en móvil */
