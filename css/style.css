@@ -575,7 +575,7 @@ h2 {
     background-color: #fafafa;
     padding: 60px 0 20px;
     border-top: 1px solid #eee;
-    color: var(--color-texto);
+    color: #666;
     display: block;
 }
 
@@ -633,7 +633,7 @@ h2 {
     font-size: 0.9rem;
     text-transform: uppercase;
     margin-bottom: 20px;
-    color: var(--color-acento);
+    color: #888;
 }
 
 .footer-section p {
