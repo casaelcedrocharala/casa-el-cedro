@@ -22,10 +22,7 @@ function changeSlide(sliderId, direction) {
 
 async function changeLanguage(lang) {
     try {
-        // Detectar qué archivo JSON cargar según la página actual
         const pageJson = document.body.getAttribute('data-page-json') || 'actividades-detalle.json';
-        
-        // Ajustar ruta: si el HTML está en una subcarpeta, sube un nivel para buscar la carpeta /json
         const response = await fetch(`../json/${pageJson}`);
         const translations = await response.json();
         const texts = translations[lang];
@@ -40,7 +37,6 @@ async function changeLanguage(lang) {
 
         // 2. Traducir CONTENIDO (IDs dinámicos)
         Object.keys(texts).forEach(key => {
-            // Dentro de Object.keys(texts).forEach(key => { ... })
             if (key === 'meta-title') {
                 document.title = texts[key];
             }
@@ -49,22 +45,34 @@ async function changeLanguage(lang) {
                 if (metaDescription) metaDescription.setAttribute('content', texts[key]);
             }
 
-            if (key !== 'menu') {
+            // Añadimos: && key !== 'common' para que no falle al leer el objeto de los botones
+            if (key !== 'menu' && key !== 'common') {
                 const el = document.getElementById(key);
                 if (el) el.textContent = texts[key];
             }
         });
 
+        // 3. Traducir elementos por CLASE (Usando el objeto 'common')
+        if (texts.common) {
+            Object.keys(texts.common).forEach(className => {
+                const selector = '.' + className.split(' ').join('.');
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => {
+                    el.textContent = texts.common[className];
+                });
+            });
+        }
+
         localStorage.setItem('preferredLang', lang);
-        document.getElementById('current-lang').innerText = lang.toUpperCase();
+        // Actualizar el indicador visual del selector de idioma
+        const langDisplay = document.getElementById('current-lang');
+        if (langDisplay) langDisplay.innerText = lang.toUpperCase();
 
     } catch (error) {
-        console.error("Error cargando traducción de subpágina:", error);
+        console.error("Error cargando traducción:", error);
     }
 }
 
-
-// Cargar idioma guardado al iniciar
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'es';
     changeLanguage(savedLang);

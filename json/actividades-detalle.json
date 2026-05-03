@@ -31,7 +31,7 @@
     "act11-title": "La Variante - Encino",
     "act11-desc": "Un lugar surrealista, donde dos ríos tallaron las piedras para abrirse paso dentro del cañón, un lugar para conectarse con uno mismo.",
     "common": {
-      "btn-translate": "Ver detalles y cómo llegar"
+      "btn-sobrio btn-translate": "Ver detalles y cómo llegar"
     }
   },
   "en": {
@@ -66,7 +66,7 @@
     "act11-title": "La Variante - Encino",
     "act11-desc": "A surreal place where two rivers carved the stones through the canyon. A place to contemplate and connect with yourself.",
     "common": {
-      "btn-translate": "View details and directions"
+      "btn-sobrio btn-translate": "View details and directions"
     }
   },
   "de": {
@@ -101,7 +101,7 @@
     "act11-title": "La Variante - Encino",
     "act11-desc": "Ein surrealer Ort, an dem zwei Flüsse Steine in den Canyon gehaucht haben. Ein Ort zum Innehalten und sich selbst Finden.",
     "common": {
-      "btn-translate": "Details und Anfahrt"
+      "btn-sobrio btn-translate": "Details und Anfahrt"
     }
   }
 }
