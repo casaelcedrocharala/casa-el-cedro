@@ -276,23 +276,27 @@ h2 {
 }
 
 /* --- SERVICIOS (SERVICIOS DE LA CASA) --- ****************************************************************/
+#servicios {
+    padding: 60px 20px; /* Margen interno arriba y abajo */
+    background-color: #f9f9f9; /* Opcional: un fondo ligero para diferenciar la zona */
+}
 
 .servicios-grid {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin: 40px auto;
+    gap: 50px; /* Aumenté un poco el espacio entre items */
+    margin: 0 auto; /* Quitamos el margin vertical de aquí porque ya lo tiene el ID #servicios */
     max-width: 1000px;
-    padding: 0 20px;
 }
 
 .servicio-item {
-    flex: 1; /* Distribuye espacio igual para cada servicio */
+    flex: 1;
     max-width: 200px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 20px; /* Espacio interno para que el hover se vea mejor */
     transition: transform 0.3s ease;
 }
 
@@ -326,6 +330,10 @@ h2 {
 /* --- RESPONSIVE PARA SERVICIOS --- */
 
 @media (max-width: 768px) {
+    #servicios {
+        padding: 40px 15px;
+    }
+
     .servicios-grid {
         /* Cambio clave: de fila a columna */
         flex-direction: column; 
@@ -336,7 +344,7 @@ h2 {
     .servicio-item {
         width: 100%; /* Ocupa el ancho disponible */
         max-width: 250px; /* Evita que el texto se estire demasiado */
-        padding: 15px;
+        padding: 25px 15px;
         /* Opcional: una línea sutil divisoria excepto en el último */
         border-bottom: 1px solid #eee; 
     }
@@ -608,6 +616,12 @@ img, video, canvas, svg {
 
 
 /* TARJETAS DE PRESENTACION *****************************************************************************************/
+.info-tecnica {
+    padding: 80px 20px; /* Mucho aire arriba y abajo */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .datos-tecnicos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
