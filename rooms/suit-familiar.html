@@ -1,0 +1,174 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitación suit familiar| Casa El Cedro Charalá</title>
+    
+    <meta name="description" content="Alójate en la suit familiar. 2 habitaciones con espacio interior, baño compartido y vistas naturales en Casa El Cedro, Charalá.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://casaelcedro.com">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/icons/logo-svg.svg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "HotelRoom",
+      "name": "Habitación suit familiar",
+      "description": "Suite Familiar Espaciosa: 2 Habitaciones mas sala interior mas baño compartido.",
+      "image": "https://casaelcedro.com/assets/img/suit-1.webp",
+      "offers": {
+        "@type": "Offer",
+        "price": "250000",
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock",
+        "url": "https://casaelcedro.com" 
+      },
+      "containedInPlace": {
+        "@type": "Hotel",
+        "name": "Casa El Cedro",
+        "telephone": "+573192261294",
+        "address": {
+          "@type": "682557",
+          "addressLocality": "Charalá",
+          "addressRegion": "Santander",
+          "addressCountry": "CO"
+        },
+        "url": "https://casaelcedro.com"
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "WiFi gratis", "value": "true" },
+        { "@type": "LocationFeatureSpecification", "name": "Estacionamiento", "value": "true" },
+        { "@type": "LocationFeatureSpecification", "name": "Baño privado", "value": "true" }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="../index" class="logo-area" style="text-decoration: none; color: inherit;">
+                <img src="../assets/icons/logo-svg.svg" alt="Logo Casa El Cedro" class="nav-logo">
+                <span id="title">Casa El Cedro | Espada san jorge</span>
+            </a>
+
+            <!-- Botón de Hamburguesa (Móviles) -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navegación -->
+            <nav class="main-nav" id="main-nav">
+                <a href="../index.html" id="nav-home">Inicio</a>
+                <a href="../quienes-somos.html" id="nav-about">Quiénes Somos</a>
+                <a href="../en-construccion.html" id="nav-activities">Actividades</a>
+                <a href="../contacto.html" id="nav-contact">Contáctenos</a>
+            </nav>
+
+            <!-- Selector de Idioma -->
+            <div class="lang-dropdown">
+                <button class="lang-dropbtn">
+                    <img src="../assets/icons/idiomas.svg" alt="Idioma" width="30">
+                    <span id="current-lang">ES</span>
+                </button>
+                <div class="lang-content">
+                    <a href="#" onclick="changeLanguage('es')">Español</a>
+                    <a href="#" onclick="changeLanguage('en')">English</a>
+                    <a href="#" onclick="changeLanguage('de')">Deutsch</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="room-detail-container">
+        <section class="room-header">
+            <h1>Suit Familiar</h1>
+            <p class="tagline">Disfruta de la comodidad y privacidad en esta amplia suite diseñada para grupos o familias.</p>
+        </section>
+
+        <!-- Slider de Fotos -->
+        <div class="slider-container">
+            <div class="slider">
+                <img src="../assets/img/espada-san-jorge-1.webp" alt="vista del interior de la habitación" class="slide">
+                <img src="../assets/img/espada-san-jorge-2.webp" alt="vista de la entrada al baño" class="slide">
+                <img src="../assets/img/espada-san-jorge-3.webp" alt="cama doble confortable" class="slide">
+                <img src="../assets/img/espada-san-jorge-4.webp" alt="lavamanos blanco" class="slide">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <section class="room-info">
+            <div class="description">
+                <h2>Tu Refugio Privado: Suite Doble con Estancia Interior</h2>
+                <p>Siéntete como en casa en nuestra suite de dos habitaciones. El espacio destaca por su sala interior privada, el rincón ideal para leer, trabajar o relajarte tras un día de paseo. El diseño integra dos dormitorios confortables y un baño compartido impecable, ofreciendo un ambiente íntimo y relajado para tu estancia.</p>
+                
+                <ul class="room-amenities">
+                    <li>✓ Habitaciones: Dos dormitorios, sala y baño compartido.</li>
+                    <li>✓ Baño con lluvia de agua caliente</li>
+                    <li>✓ Área Social: Sala de estar privada dentro de la suite</li>
+                    <li>✓ Desayuno incluido hasta 4 huespedes</li>
+                </ul>
+            </div>
+
+            <div class="booking-card">
+                <h3>Desde $400.000 / noche</h3>
+                <p>Tarifa sujeta a temporada</p>
+                <div style="margin-top: 20px;">
+        <div class="cta-container">
+        <a href="https://www.booking.com/hotel/co/casa-el-cedro.es.html" class="btn-sobrio" id="nav-how-to-get"  target="_blank" 
+       rel="noopener noreferrer">Reservar en Booking</a>
+        </div>
+     </div>
+    </div>
+</section>
+    <!-- GALERÍA DE HABITACIONES -->
+    <section id="galeria">
+        <h2 id="gallery-title">Nuestras Habitaciones</h2>
+        <div class="galeria-grid">
+            <!-- Habitación 1 -->
+            <a href="palo-de-agua" class="habitacion-card">
+                <img src="../assets/img/palo-de-agua-1.webp" alt="Habitación Palo de Agua">
+                <div class="overlay">
+                    <span class="room-name">Palo de Agua</span>
+                </div>
+            </a>
+            <!-- Habitación 2 -->
+            <a href="espada-san-jorge" class="habitacion-card">
+                <img src="../assets/img/espada-san-jorge-1.webp" alt="Habitación Espada San Jorge">
+                <div class="overlay">
+                    <span class="room-name">Espada San Jorge</span>
+                </div>
+            </a>
+            <!-- Habitación 3 -->
+            <a href="en-construccion" class="habitacion-card">
+                <img src="../assets/img/suit-1.webp" alt="Suite Principal">
+                <div class="overlay">
+                    <span class="room-name">Suite Familiar</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+{% include footer.html %}
+<a href="https://wa.me/message/TOPCBYBZ7C5AI1" 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <!-- URL corregida para que cargue el icono real -->
+    <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
+    <span class="whatsapp-text" id="whatsapp-msg">¿Necesitas ayuda?</span>
+</a>
+    <!-- Script para el Slider --> 
+<script src="../js/script.js"></script>
+</body>
+</html>
